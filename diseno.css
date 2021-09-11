@@ -7,6 +7,8 @@ body{
     background-attachment: fixed;
 }
 
-.buttonEdit {
-    float: right;
+.card-subheading {
+    text-align: center;
+    background-color: rgba(0, 238, 20, 0.076);
+    
 }
