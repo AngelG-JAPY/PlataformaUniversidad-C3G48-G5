@@ -12,3 +12,15 @@ body{
     background-color: rgba(0, 238, 20, 0.076);
     
 }
+.editar{
+   text-align: right;
+}
+.form{
+    text-align: right;
+}
+.cambio{
+    text-align: center;
+}
+.guardar {
+    text-align: center;
+}
