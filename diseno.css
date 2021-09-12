@@ -5,6 +5,9 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+   }
+.fondo1.jpg{
+    opacity: 0.6;
 }
 
 .card-subheading {
