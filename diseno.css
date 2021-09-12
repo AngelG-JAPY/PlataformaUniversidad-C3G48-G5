@@ -8,19 +8,26 @@ body{
 }
 
 .card-subheading {
+    margin-top: 20px;
     text-align: center;
     background-color: rgba(0, 238, 20, 0.076);
     
 }
 .editar{
-   text-align: right;
-}
-.form{
+    margin-top: 20px;
     text-align: right;
+    
 }
-.cambio{
+
+.cambio {
+    margin-top: 20px;
     text-align: center;
 }
-.guardar {
+.universidades{
+    margin-top: 20px;
+    text-align: center;
+}
+.guardar{
+    margin-top: 20px;
     text-align: center;
 }
