@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 63%;
+  list-style: none;
+}
+
+li {
+  float: center;
+  text-align: center !important;
+  text-shadow: 2px 2px 2px blue;
+}
+
+.logo img {
+  width: 170px;
+  height: 147px;
+  position: absolute;
+  margin-top: -54px;
+  margin-left: 60px;
+  padding: 54 !important;
+}
+
+nav a {
+  width: 100px;
+  display: block;
+  padding: 20px 15px;
+  text-decoration: none;
+  font-family: Arial;
+  color: #f2f2f2;
+  text-align: center;
+}
+
+nav a:hover {
+  background-color: rgb(49, 67, 230) !important;
+  transition: 0.5s;
+  text-transform: uppercase;
+}
+
+.carousel .carousel-item > img {
+  height: 400px !important;
+  width: 400px !important;
+}
+
+nav ul a {
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  font-size: 1rem;
+  color: #fff;
+  display: initial !important;
+  padding: 0 15px;
+  cursor: pointer;
+}
+
+.opacidad {
+  background: linear-gradient(#c9c9c9, #67badd);
+  opacity: 0.9;
+}
+
+#titulo {
+  text-align: center;
+  text-shadow: 2px 2px 2px rgb(0, 119, 255);
+}
+
+#parrafo {
+  text-align: center;
+  padding-top: 128px;
+  text-shadow: rgb(0, 183, 255) !important;
+  font-weight: 700;
+  font-size: 17px;
+}
+
+#imagen {
+  margin-bottom: 102px;
+}
+
+img:hover {
+  box-shadow: aquamarine !important;
+}
+
+form {
+  text-align: left;
+}
+
+#envio {
+  height: 46px !important;
+  width: 244px !important;
+  border: 2px solid #ccc !important;
+  text-align: center !important;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+html {
+  background: url("/img/grado.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.nav-wrapper {
+  margin-top: 45px !important;
+}
+
+#formulario {
+  color: black;
+}
+
+#face {
+  padding-left: 612;
+}
