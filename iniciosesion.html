@@ -1,0 +1,149 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="imgs/favicon.png">
+    <!-- scroll -->
+    <link rel="stylesheet" href="scroll.css">
+    <!-- estilos -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="iniciosesion.css">
+    <title>Iniciar sesi&oacuten/Registro</title>
+</head>
+
+<body>
+
+    <!-- menu de angel -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img class="img-fluid" id="loguito" src="imgs/logo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="#">Inicio</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Acerca de</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="iniciosesion.html" class="nav-link" id="inicio">Iniciar sesi&oacuten/Registro</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- inicio del login y el registro -->
+    <div class="d-flex justify-content-center align-items-center mt-5">
+        <div class="card">
+            <nav>
+                <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
+                    <button class="nav-link active" id="nav-login-tab" data-bs-toggle="tab" data-bs-target="#nav-login"
+                        type="button" role="tab" aria-controls="nav-login" aria-selected="true">Iniciar Sesi&oacuten</button>
+                    <button class="nav-link" id="nav-signup-tab" data-bs-toggle="tab" data-bs-target="#nav-signup"
+                        type="button" role="tab" aria-controls="nav-signup" aria-selected="false">Registro</button>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
+
+                    <div class="form p-4 ">
+                        <div><img class="imagen" src="imgs/birrete.png" alt=""></div><br>
+                        <!-- formulario de inicio de sesion ewe/ This is the login form  -->
+                        <form action="" method="POST">
+                            <div class=" input-group ">
+                                <div class="input-group-text d-inline-block justify-content-center"
+                                    style="height: 58px; padding-top: 8%;"><i class="bi bi-person-circle"
+                                        style="font-size: 20px;"></i></div>
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="floatingInput"
+                                        placeholder="name@example.com" required="required">
+                                    <label for="floatingInput" class="email">Correo:</label>
+                                </div>
+                            </div>
+                            <div class=" input-group ">
+                                <div class="input-group-text d-inline-block justify-content-center"
+                                    style="height: 58px; padding-top: 8%;"><i class="bi bi-lock-fill"
+                                        style="font-size: 20px;"></i></div>
+                                <div class="form-floating mb-3">
+                                    <input type="password" minlength="8" class="form-control" id="floatingInput"
+                                        placeholder="password" required="required">
+                                    <label for="floatingInput" class="password">Contraseña:</label>
+                                </div>
+                            </div>
+
+                            <div><a href="#" class="link-info">Olvid&eacute mi contraseña</a></div><br>
+
+                            <div class="justify-content-center">
+                                <input class="form-check-input" type="checkbox" id="autoSizingCheck">
+                                <label class="form-check-label" for="autoSizingCheck">
+                                    Mantener sesi&oacuten activa
+                                </label>
+                            </div><br>
+
+                            <button class="btn btn-primary btn-block">Entrar</button>
+                        </form>
+                    </div>
+
+                </div>
+                <!-- This is the Register form  -->
+                <div class="tab-pane fade" id="nav-signup" role="tabpanel" aria-labelledby="nav-signup-tab">
+                    <div class="form p-5 ">
+                        <div class="justify-content-center"><img class="imagen" src="imgs/sign-up.png"></div>
+                        <form action="" method="POST">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingInput" required="required" placeholder="Nombre">
+                                <label for="floatingInput" class="Nombre">Nombre:</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingInput" required="required" placeholder="Nombre">
+                                <label for="floatingInput" class="Apellido">Apellido:</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInput"
+                                    placeholder="name@example.com" required="required">
+                                <label for="floatingInput" class="email">Correo:</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="password" minlength="8" class="form-control" id="floatingInput"
+                                    placeholder="password" required="required">
+                                <label for="floatingInput" class="password">Contraseña:</label>
+                            </div>
+
+
+
+                            <br>
+                            <button class="btn btn-primary btn-block">Registrar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
