@@ -2,63 +2,79 @@
 <html lang="es">
 
 <head>
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil De Usuario</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="diseno.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil De Usuario</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="diseno.css">
 </head>
 
 <body>
-    <h1 class="card-subheading"><b>Perfil</b></h1>
 
-    <div>
-        <div class="editar">
-            <button type="button" class="btn btn-outline-primary">Editar</button>
-        </div>
-
-        <form action="">
-            <div class="row d-flex justify-content-center align-items-center">
-                <div class="col-6 col-sm-5">
-                    <h6><b>Foto</b></h6>
-                    <img src="/Users/macbook/Documents/MINTIC/Ciclo 3 /Proyecto universidades /PlataformaUniversidad-C3G48-G5/logo.jpg" width="300" height="300">
-                </div>
-                <div class="col-6 col-sm-5">
-                    <div class="mb-3">
-                        <label for="inputNombre" class="col-sm-2 col-form-label"> <b>Nombre:</b></label>
-                        <input type="text" class="form-control col-sm-10 " id="inputNombre">
-                    </div>
-                    <div class="mb-3">
-                        <label for="inputApellido" class="col-sm-2 col-form-label"><b>Apellido:</b></label>
-                        <input type="text" class="form-control col-sm-10" id="inputApellido">
-                    </div>
-                    <div class="mb-3">
-                        <label for="inputEmail" class="col-sm-2 col-form-label"><b>Email:</b></label>
-                        <input type="email" class="form-control col-sm-10" id="inputEmail">
-                    </div>
-                </div>
-            </div>
-            <div class="cambio">
-                <button type="submit" class="btn btn-primary">CAMBIO DE CONTRASEÑA</button>
-            </div>
-            <div class="universidades">
-
-                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                    <option selected>UNIVERSIDADES FAVORITAS</option>
-                    <option value="universidad"> Ejemplo1</option>
-                    <option value="universidad"> Ejemplo2</option>
-                </select>
-            </div>
-            <div class="guardar">
-                <button type="submit" class="btn btn-primary">Guardar</button>
-            </div>
-        </form>
+  <div class="container">
+    <div class="row justify-content-end">
+      <div class="Editar col-1 mb-3 mt-3">
+        <button type=" button" class="btn btn-outline-primary">Editar</button>
+      </div>
     </div>
+    <form action="">
+      <div class="container mb-3">
+        <div class="row">
+          <div class="col">
+            <h6><b>Foto</b></h6>
+            <img src="/Users/macbook/Documents/MINTIC/Ciclo3/Proyecto universidades /PlataformaUniversidad-C3G48-G5/Users/macbook/Documents/MINTIC/Ciclo3/Proyecto universidades /PlataformaUniversidad-C3G48-G5/Foto.jpg"
+              alt="" width="300" height="300">
+        <!--<img src="/Users/macbook/Documents/MINTIC/Ciclo 3 /Proyecto universidades /PlataformaUniversidad-C3G48-G5/logo.jpg"
+                 width="300" height="300"></div> -->
+          </div>
 
+          <div class="col">
+            <div class="mb-3 mt-5">
+              <label for="inputNombre" class=""> <b>Nombre:</b></label>
+              <input type="text" class="form-control" id="inputNombre">
+            </div>
+            <div class="mb-3">
+              <label for="inputApellido" class="col-form-label"><b>Apellido:</b></label>
+              <input type="text" class="form-control" id="inputApellido">
+            </div>
+            <div class="mb-3">
+              <label for="inputEmail" class="col-form-label"><b>Email:</b></label>
+              <input type="email" class="form-control" id="inputEmail">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-5 mb-3">
+              <button type="submit" class="btn btn-primary">CAMBIO DE CONTRASEÑA</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-5 mb-3">
+            <select class="form-select form-select" aria-label=".form-select example">
+              <option selected>UNIVERSIDADES FAVORITAS</option>
+              <option value="universidad"> Ejemplo1</option>
+              <option value="universidad"> Ejemplo2</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-1 mb-3">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
 </body>
 
 </html>

@@ -1,36 +1,8 @@
 
 body{
-    min-height: 100vh;
     background-image:url(fondo1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    opacity: 0.5;
    }
-.fondo1.jpg{
-    opacity: 0.6;
-}
-
-.card-subheading {
-    margin-top: 20px;
-    text-align: center;
-    background-color: rgba(0, 238, 20, 0.076);
-    
-}
-.editar{
-    margin-top: 20px;
-    text-align: right;
-    
-}
-
-.cambio {
-    margin-top: 20px;
-    text-align: center;
-}
-.universidades{
-    margin-top: 20px;
-    text-align: center;
-}
-.guardar{
-    margin-top: 20px;
-    text-align: center;
-}
