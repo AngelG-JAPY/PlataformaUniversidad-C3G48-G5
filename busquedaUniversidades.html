@@ -99,40 +99,49 @@
       </div>
 
     <!--Div para los filtros -->
-    <div class="filtros">
-        <form>
-            <label for="cbPais">País: </label>
-            <select name="cbPais" id="">
-                <option value="Colombia"> Colombia</option>
+    <!--Filtros y resultados-->
+  <div class="container mt-3" >
+    <div class="row ">
+      <div class="col-lg-4 col-md-12">
+        <form >
+          <div class=" mb-3">
+            <label for="pais-select" class="form-label">País</label>
+            <select class="form-select" id="pais-select">
+              <option value="Colombia" selected>Colombia</option>
             </select>
+          </div>
 
-            <label for="cbDepartamento">Departamento: </label>
-            <select name="cbDepartamento" id="">
-                <option value="NS">Norte de Santander</option>
-                <option value="Risaralda">Risaralda</option>
-                <option value="Cundinamarca">Cundinamarca</option>
-                <option value="Antoquia">Antoquia</option>
+          <div class="mb-3">
+            <label for="departamento-select" class="form-label">Departamento</label>
+            <select id="departamento-select" class="form-select">
+              <option value="NS">Norte de Santander</option>
+              <option value="Cundinamarca">Cundinamarca</option>
+              <option value="Antioquia">Antioquia</option>
             </select>
-
-            <label for="cbCiudad">Ciudad: </label>
-            <select name="cbCiudad" id="">
-                <option value="Cúcuta">Cúcuta</option>
-                <option value="Pereira">Pereira</option>
-                <option value="Bogotá">Bogotá</option>
-                <option value="Medellín">Medellín</option>
+          </div>
+          <div class="mb-3">
+            <label for="ciudad-select" class="form-label">Ciudad</label>
+            <select id="ciudad-select" class="form-select">
+              <option value="Cúcuta">Cúcuta</option>
+              <option value="Bogotá">Bogotá</option>
+              <option value="Medellín">Medellín</option>
             </select>
+          </div>
         </form>
+      </div>
+
+      <div class="col-lg-8">
+        <div class="card" style="width: 18rem;">
+          <img src="img/ufps_logo.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="resultados">
-        <h2><b>Resultados</b></h2>
-        <img src="img/ufps_logo.jpg" alt="UFPS-LOGO">
-        <img src="img/universidadNacional_logo.png" alt="universidadNacional_logo">
-        <img src="img/utp_logo.png" alt="UTP-LOGO">
-    </div>
-
-
-    
+  </div>
 </body>
-
 </html>
+
