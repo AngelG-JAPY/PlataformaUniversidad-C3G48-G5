@@ -1,0 +1,83 @@
+
+body{
+    background-image: url("https://static.vecteezy.com/system/resources/previews/002/430/993/non_2x/book-stack-on-a-white-background-free-photo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.card{
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px 5px #0d6dfd62;
+    background-color: #ffffff82;
+    
+}
+
+.link-info {
+    font-weight: 600;
+    color: #0d6efd;
+}
+
+.link-info:hover {
+    font-weight: 600;
+    color: #e13030;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #6473ff;
+    font-size: 20px;
+    font-weight: bold;
+    background-color:#ffffff48;
+    border-color: #dee2e63d #dee2e64a rgba(255, 255, 255, 0.46);
+    
+}
+
+.nav-tabs .nav-link{
+    font-weight: 700;
+    
+}
+
+
+#nav-login{
+    background-color: #d5caca1b;
+    border-color: #49505720;
+    font-size: 20px;
+}
+nav{
+    background-color: #d5caca1b;
+}
+#nav-signup{
+    background-color: #d5caca1b;
+}
+
+.input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3), .input-group:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color:#0d6efd;
+    color:aliceblue;
+}
+
+.imagen{
+    margin: 10px auto;
+    display: block;
+}
+.nav-tabs .nav-link {
+    margin-bottom: -1px;
+    background: 0 0;
+    border: 4px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    font-size: 18px;
+}
+
+#inicio{
+    border-bottom: 4px solid #0d6efd;
+}
+
+#loguito{
+    height: auto;
+    max-width: 20%;
+}
+
+/* https://media.istockphoto.com/photos/education-background-picture-id1032539100?b=1&k=20&m=1032539100&s=612x612&w=0&h=-lL2QDcpiv8Rsr2lFDnKqiuOqFtTlmGisum13fKpaCQ= */
