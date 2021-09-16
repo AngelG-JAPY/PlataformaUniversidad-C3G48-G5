@@ -56,7 +56,7 @@ nav ul a {
 }
 
 .opacidad {
-  background: linear-gradient(#c9c9c9, #67badd);
+  background: linear-gradient(#c9c9c9, #a1ddf7);
   opacity: 0.9;
 }
 
@@ -71,6 +71,7 @@ nav ul a {
   text-shadow: rgb(0, 183, 255) !important;
   font-weight: 700;
   font-size: 17px;
+  padding-left: 50px;
 }
 
 #imagen {
@@ -111,6 +112,23 @@ html {
   color: black;
 }
 
-#face {
-  padding-left: 612;
+#facebook {
+  padding-left: 300px;
+  padding-top: 23px;
+  padding-bottom: 23px;
+  padding-left: 612px;
+}
+
+#twitter {
+  padding-left: 300px;
+  padding-top: 23px;
+  padding-bottom: 23px;
+  padding-left: 30px;
+}
+
+#instagram {
+  padding-left: 300px;
+  padding-top: 23px;
+  padding-bottom: 23px;
+  padding-left: 30px;
 }
