@@ -1,8 +1,21 @@
 
-body{
-    background-image:url(fondo1.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    opacity: 0.5;
-   }
+html,
+body,
+header
+#intro{
+    height: 100%;
+    opacity:unset;
+}
+html,
+body,
+header
+#intro{
+    background: url(fondo1.jpg) no-repeat center center fixed;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    
+}
+
+
