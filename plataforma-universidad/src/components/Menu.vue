@@ -5,7 +5,7 @@
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only">
         <v-btn text><router-link to="/">Inicio</router-link></v-btn>
-        <v-btn text><router-link to="/about">Acerca de</router-link></v-btn>
+        <!-- <v-btn text><router-link to="/about">Acerca de</router-link></v-btn> -->
         <v-btn text><router-link to="/iniciosesion">Inicio sesion/Registro</router-link></v-btn>
         <v-btn text><router-link to="/ayuda">Ayuda</router-link></v-btn>
         <v-btn text><router-link to="/busqueda">Busqueda</router-link></v-btn>
@@ -31,9 +31,9 @@
               <v-list-item>
                 <v-list-item-title><router-link to="/">Inicio</router-link></v-list-item-title>
               </v-list-item>
-              <v-list-item>
+              <!-- <v-list-item>
                 <v-list-item-title><router-link to="/about">Acerca de</router-link></v-list-item-title>
-              </v-list-item>
+              </v-list-item> -->
               <v-list-item>
                 <v-list-item-title><router-link to="/iniciosesion">Inicio sesion/Registro</router-link></v-list-item-title>
               </v-list-item>
