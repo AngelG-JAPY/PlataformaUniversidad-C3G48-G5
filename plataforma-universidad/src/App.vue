@@ -31,12 +31,13 @@
 </template>
 
 <script>
-// import Footer from './components/Footer.vue';
+import Footer from './components/Footer.vue';
 import Menu from './components/Menu.vue';
 
 export default {
   components:{
     Menu,
+    Footer
     
   },
   data() {
@@ -53,3 +54,24 @@ export default {
   },
 };
 </script>
+<style>
+body::-webkit-scrollbar-track
+{
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #ffffff;
+}
+
+body::-webkit-scrollbar
+{
+	width: 12px;
+	background-color:#ffffff ;
+}
+
+body::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #0d6efd;
+}
+</style>
