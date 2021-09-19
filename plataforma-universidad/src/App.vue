@@ -1,55 +1,55 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
+    <!-- <v-navigation-drawer
+      class="deep-purple accent-4"
+      src="https://cdn.vuetifyjs.com/images/backgrounds/bg-2.jpg"
+      v-model="drawer"
       dark
+      app
     >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+      <Menu ></Menu>
+    </v-navigation-drawer> -->
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
+     
+      <Menu />
+    
+    
 
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
+    <!-- Sizes your content based upon application components -->
     <v-main>
-      <router-view/>
+      <!-- Provides the application the proper gutter -->
+      <v-container fluid>
+        <!-- If using vue-router -->
+        <router-view></router-view>
+      </v-container>
     </v-main>
+
+    <v-footer app>
+      <Footer></Footer>
+    </v-footer>
   </v-app>
 </template>
 
 <script>
+// import Footer from './components/Footer.vue';
+import Menu from './components/Menu.vue';
 
 export default {
-  name: 'App',
-
-  data: () => ({
-    //
-  }),
+  components:{
+    Menu,
+    
+  },
+  data() {
+    return {
+      title: "Mi pagina",
+      drawer: false,
+    };
+  },
+  methods: {
+    toggleDrawer() {
+      this.drawer = !this.drawer;
+      this.title = this.drawer ? "Mi otra pagina" : "Cesar's page";
+    },
+  },
 };
 </script>
