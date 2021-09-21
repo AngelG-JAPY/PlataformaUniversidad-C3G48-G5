@@ -1,6 +1,6 @@
 <template >
   <v-container>
-    <span class="bg"></span>
+    <span class="background"></span>
     <v-row align="center" justify="center">
       <v-col cols="12" sm="10">
         <v-card class="elevation-6 mt-8" color="rgba(14, 2, 247, 0.2)">
@@ -10,8 +10,7 @@
                 <v-col cols="12" md="6" class="white">
                   <v-card-text class="mt-12">
                     <h2 class="text-center">INICIAR SESION</h2>
-                    <v-img
-                      
+                    <v-img                
                       src="../assets/birrete.png"
                       height="90"
                       contain
@@ -175,7 +174,7 @@ export default {
 };
 </script>
 <style scoped>
-.bg {
+.background {
   width: 100%;
   height: 100%;
   position: absolute;
