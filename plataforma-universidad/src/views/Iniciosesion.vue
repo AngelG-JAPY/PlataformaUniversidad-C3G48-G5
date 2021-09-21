@@ -1,6 +1,6 @@
 <template >
   <v-container>
-    <span class="background"></span>
+    <span class="bg"></span>
     <v-row align="center" justify="center">
       <v-col cols="12" sm="10">
         <v-card class="elevation-6 mt-8" color="rgba(14, 2, 247, 0.2)">
@@ -174,7 +174,7 @@ export default {
 };
 </script>
 <style scoped>
-.background {
+.bg {
   width: 100%;
   height: 100%;
   position: absolute;
