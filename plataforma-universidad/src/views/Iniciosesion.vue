@@ -1,6 +1,6 @@
 <template >
   <v-container>
-    <span class="bg"></span>
+    <span class="background"></span>
     <v-row align="center" justify="center">
       <v-col cols="12" sm="10">
         <v-card class="elevation-6 mt-8" color="rgba(14, 2, 247, 0.2)">
@@ -9,51 +9,69 @@
               <v-row>
                 <v-col cols="12" md="6" class="white">
                   <v-card-text class="mt-12">
-                    <h2 class="text-center">INICIAR SESION</h2>
-                    <v-img                
+                    <h2 class="text-center">INICIAR SESIÓN</h2>
+                    <v-img
                       src="../assets/birrete.png"
                       height="90"
                       contain
                     ></v-img>
+                    <v-form ref="form" v-model="valid" lazy-validation>
+                      <v-row align="center" justify="center">
+                        <v-col cols="12" sm="8">
+                          <v-text-field
+                            label="Correo:"
+                            outlined
+                            dense
+                            color="blue"
+                            autocomplete="false"
+                            class="mt-10"
+                            v-model="email"
+                            :rules="emailRules"
+                            required
+                          />
+                          <v-text-field
+                            label="Contraseña:"
+                            outlined
+                            dense
+                            color="blue"
+                            autocomplete="false"
+                            type="password"
+                            v-model="password"
+                            :rules="passwordRules"
+                            required
+                          />
+                          <v-row>
+                            <v-col cols="12" sm="7">
+                              <v-list-item
+                                class="caption blue--text"
+                                @click="alerta"
+                                >Olvidé mi contraseña</v-list-item
+                              >
+                            </v-col>
+                          </v-row>
 
-                    <v-row align="center" justify="center">
-                      <v-col cols="12" sm="8">
-                        <v-text-field
-                          label="Correo:"
-                          outlined
-                          dense
-                          color="blue"
-                          autocomplete="false"
-                          class="mt-10"
-                        />
-                        <v-text-field
-                          label="Contraseña:"
-                          outlined
-                          dense
-                          color="blue"
-                          autocomplete="false"
-                          type="password"
-                        />
-                        <v-row>
-                          <v-col cols="12" sm="7">
-                            <span class="caption blue--text"
-                              >Olvide mi contraseña</span
-                            >
-                          </v-col>
-                        </v-row>
-                        <v-row>
-                          <v-col cols="12" sm="7">
-                            <v-checkbox
-                              label="Mantener sesion activa"
-                              class="mt-n1"
-                              color="blue"
-                            >
-                            </v-checkbox>
-                          </v-col>
-                        </v-row>
-                        <v-btn color="blue" dark block tile>Entrar</v-btn>
-                      </v-col>
-                    </v-row>
+                          <v-row>
+                            <v-col cols="12" sm="12">
+                              <v-checkbox
+                                label="Mantener sesión activa"
+                                class="mt-n1"
+                                color="blue"
+                              >
+                              </v-checkbox>
+                            </v-col>
+                          </v-row>
+                          <v-btn
+                            :disabled="!valid"
+                            color="blue"
+                            dark
+                            block
+                            tile
+                            @click="submit"
+                            >Entrar</v-btn
+                          >
+                        </v-col>
+                      </v-row>
+                    </v-form>
                   </v-card-text>
                 </v-col>
 
@@ -62,9 +80,9 @@
                 <v-col cols="12" md="6" class="rgb(0, 0, 0, 0) rounded-bl-xl">
                   <div style="text-align: center; padding: 180px 0">
                     <v-card-text class="white--text">
-                      <h3 class="text-center">No tienes una cuenta? :o</h3>
+                      <h3 class="text-center">¿No tienes una cuenta? :o</h3>
                       <h6 class="text-center">
-                        El boton de abajo te llevara al registro <br />
+                        El botón de abajo te llevará al registro <br />
                       </h6>
                     </v-card-text>
                     <div class="text-center">
@@ -84,15 +102,15 @@
                 <v-col cols="12" md="6" class="rgb(0, 0, 0, 0) rounded-br-xl">
                   <div style="text-align: center; padding: 180px 0">
                     <v-card-text class="white--text">
-                      <h3 class="text-center">Ya tienes una cuenta? :D</h3>
+                      <h3 class="text-center">¿Ya tienes una cuenta? :D</h3>
                       <h6 class="text-center">
-                        Pinchale aqui abajo, te llevara al inicio de sesion<br />
+                        Pinchale aqui abajo, te llevará al inicio de sesión<br />
                         Bienvenido de vuelta :3
                       </h6>
                     </v-card-text>
                     <div class="text-center">
                       <v-btn tile outlined dark @click="step--"
-                        >Ir al inicio de sesion</v-btn
+                        >Ir al inicio de sesión</v-btn
                       >
                     </div>
                   </div>
@@ -100,58 +118,94 @@
 
                 <!-- Formulario de registro -->
 
-                <v-col cols="12" md="6" class="white" style="box-shadow: 5px 0px 5px 8px rgba(0, 0, 0, 0.419); ">
+                <v-col
+                  cols="12"
+                  md="6"
+                  class="white"
+                  style="box-shadow: 5px 0px 5px 8px rgba(0, 0, 0, 0.419)"
+                >
                   <v-card-text class="mt-12">
                     <h2 class="text-center">REGISTRO</h2>
                     <v-img
-                      
                       src="../assets/sign-up.png"
                       height="90"
                       contain
                     ></v-img>
-                    <v-row align="center" justify="center">
-                      <v-col cols="12" sm="8">
-                        <v-row>
-                          <v-col cols="12" sm="6">
-                            <v-text-field
-                              label="Nombre:"
-                              outlined
-                              dense
-                              color="blue"
-                              autocomplete="false"
-                              class="mt-4"
-                            />
-                          </v-col>
-                          <v-col cols="12" sm="6">
-                            <v-text-field
-                              label="Apellido:"
-                              outlined
-                              dense
-                              color="blue"
-                              autocomplete="false"
-                              class="mt-4"
-                            />
-                          </v-col>
-                        </v-row>
-                        <v-text-field
-                          label="Correo:"
-                          outlined
-                          dense
-                          color="blue"
-                          autocomplete="false"
-                        />
-                        <v-text-field
-                          label="Contraseña:"
-                          outlined
-                          dense
-                          color="blue"
-                          autocomplete="false"
-                          type="password"
-                        />
+                    <v-form ref="form" v-model="valid" lazy-validation>
+                      <v-row align="center" justify="center">
+                        <v-col cols="12" sm="8">
+                          <v-row>
+                            <v-col cols="12" sm="6">
+                              <v-text-field
+                                label="Nombre:"
+                                outlined
+                                dense
+                                color="blue"
+                                autocomplete="false"
+                                class="mt-4"
+                                v-model="name"
+                                :rules="nameRules"
+                                required
+                              />
+                            </v-col>
+                            <v-col cols="12" sm="6">
+                              <v-text-field
+                                label="Apellido:"
+                                outlined
+                                dense
+                                color="blue"
+                                autocomplete="false"
+                                class="mt-4"
+                                v-model="apellido"
+                                :rules="apellidoRules"
+                                required
+                              />
+                            </v-col>
+                          </v-row>
+                          <v-text-field
+                            label="Correo:"
+                            outlined
+                            dense
+                            color="blue"
+                            autocomplete="false"
+                            v-model="correo"
+                            :rules="correoRules"
+                            required
+                          />
+                          <v-text-field
+                            v-model="value"
+                            label="Contraseña:"
+                            outlined
+                            dense
+                            color="blue"
+                            type="password"
+                            :rules="valueRules"
+                            required
+                            loading
+                          >
+                            <template v-slot:progress>
+                              <v-progress-linear
+                                v-if="custom"
+                                :value="progress"
+                                :color="color"
+                                absolute
+                                height="8"
+                              ></v-progress-linear>
+                            </template>
+                          </v-text-field>
 
-                        <v-btn color="blue" dark block tile>Registrarse</v-btn>
-                      </v-col>
-                    </v-row>
+                          <v-btn
+                            :disabled="!valid"
+                            color="blue"
+                            dark
+                            block
+                            tile
+                            @click="submit"
+                            >Registrarse</v-btn
+                          >
+                        </v-col>
+                      </v-row>
+                    </v-form>
                   </v-card-text>
                 </v-col>
               </v-row>
@@ -166,15 +220,71 @@
 <script>
 export default {
   data: () => ({
+    valid: true,
+    value: "",
+    custom: true,
+    name: "",
+    nameRules: [(v) => !!v || "El nombre es necesario"],
+    apellido: "",
+    apellidoRules: [(v) => !!v || "El apellido también es necesario"],
+    email: "",
+    emailRules: [
+      (v) => !!v || "El correo es necesario",
+      (v) => /.+@.+\..+/.test(v) || "Eso no es un correo valido :c",
+    ],
+    correo: "",
+    correoRules: [
+      (v) => !!v || "Correo supremamente necesario e-e no te hagas rogar",
+      (v) => /.+@.+\..+/.test(v) || "Eso no es un correo valido :c",
+    ],
+    password: "",
+    passwordRules: [
+      (v) => !!v || "La contraseña es necesaria",
+      (v) =>
+        (v && v.length >= 8) ||
+        "La contraseña debe tener un minimo de 8 caracteres",
+    ],
+    valueRules: [
+      (v) => !!v || "A este punto ya te habrás dado cuenta que todo es necesario",
+      (v) =>
+        (v && v.length >= 8) ||
+        "La contraseña debe tener un minimo de 8 caracteres",
+    ],
     step: 1,
   }),
   props: {
     source: String,
   },
+  computed: {
+    progress() {
+      return Math.min(100, this.value.length * 13);
+    },
+    color() {
+      return ["error", "warning", "success"][Math.floor(this.progress / 40)];
+    },
+  },
+  methods: {
+    alerta() {
+      this.$swal({
+        title: "Recuperar contraseña",
+        text: "ingrese su correo con el que se registro",
+        input: "email",
+        inputPlaceholder: "Correo:",
+        html: "<p>A su correo llegará un mensaje con los pasos a seguir</p>",
+        confirmButtonText: "Enviar",
+        confirmButtonColor: "#2196F3",
+        backdrop:"rgba(0,0,0,.419)",
+        
+      });
+    },
+    submit() {
+      this.$refs.form.submit();
+    },
+  },
 };
 </script>
 <style scoped>
-.bg {
+.background {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -194,7 +304,10 @@ export default {
   /* border-bottom-left-radius: 100px !important; */
 }
 .v-application .rounded-br-xl {
-    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.419);
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.419);
   /* border-bottom-right-radius: 300px !important; */
+}
+.theme--dark.v-btn.v-btn--disabled.v-btn--has-bg {
+  background-color: rgba(164, 162, 197, 0.707) !important;
 }
 </style>
