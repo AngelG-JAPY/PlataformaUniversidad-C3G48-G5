@@ -55,6 +55,9 @@ export default {
 };
 </script>
 <style>
+body{
+  margin: 0px;
+}
 body::-webkit-scrollbar-track
 {
 	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
