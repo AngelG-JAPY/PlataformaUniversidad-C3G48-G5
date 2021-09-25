@@ -40,15 +40,10 @@
                             :rules="passwordRules"
                             required
                           />
-                          <v-row>
-                            <v-col cols="12" sm="7">
-                              <v-list-item
-                                class="caption blue--text"
-                                @click="alerta"
-                                >Olvidé mi contraseña</v-list-item
-                              >
-                            </v-col>
-                          </v-row>
+                          
+                              <recupassword/>
+                              
+                            
 
                           <v-row>
                             <v-col cols="12" sm="12">
@@ -218,8 +213,13 @@
 </template>
 
 <script>
+import Recupassword from '../components/Recupassword.vue';
 export default {
+  components:{
+    Recupassword,
+  },
   data: () => ({
+    
     valid: true,
     value: "",
     custom: true,
@@ -245,7 +245,8 @@ export default {
         "La contraseña debe tener un minimo de 8 caracteres",
     ],
     valueRules: [
-      (v) => !!v || "A este punto ya te habrás dado cuenta que todo es necesario",
+      (v) =>
+        !!v || "A este punto ya te habrás dado cuenta que todo es necesario",
       (v) =>
         (v && v.length >= 8) ||
         "La contraseña debe tener un minimo de 8 caracteres",
@@ -264,19 +265,6 @@ export default {
     },
   },
   methods: {
-    alerta() {
-      this.$swal({
-        title: "Recuperar contraseña",
-        text: "ingrese su correo con el que se registro",
-        input: "email",
-        inputPlaceholder: "Correo:",
-        html: "<p>A su correo llegará un mensaje con los pasos a seguir</p>",
-        confirmButtonText: "Enviar",
-        confirmButtonColor: "#2196F3",
-        backdrop:"rgba(0,0,0,.419)",
-        
-      });
-    },
     submit() {
       this.$refs.form.submit();
     },
