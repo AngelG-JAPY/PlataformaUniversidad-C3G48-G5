@@ -1,0 +1,11 @@
+{
+  "name": "back",
+  "version": "0.0.1",
+  "description": "Backend plataforma universidad grupo 5 grupo 48",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "grupo 5",
+  "license": "ISC"
+}
