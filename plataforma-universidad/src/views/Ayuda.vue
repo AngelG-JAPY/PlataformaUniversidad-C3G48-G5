@@ -1,5 +1,5 @@
 <template>
-  <v-contaier>
+  <v-container>
     <span class="fondo"></span>
     <v-row aling="center" justify="center">
       <v-col cols="12" sm="10">
@@ -38,11 +38,11 @@
             </v-col>
           </v-row>
           <v-row>
-            <v-col>
+            <v-col class="justify-center">
               <h4 class="text-center">
                 ¿ No esta tu pregunta ? Dejanos saber cual es tu duda.
               </h4>
-              <v-container fluid>
+              <v-container>
                 <v-textarea
                   counter
                   label="texto"
@@ -50,24 +50,19 @@
                   :value="value"
                 ></v-textarea>
               </v-container>
-              <v-col class="text-center" cols="12" xs="12" md="5">
-                <v-btn
-                  class="mb-5"
-                  cols="6"
-                  justify="center"
-                  color="blue"
-                  dark
-                  block
-                  tile
-                  >Preguntar</v-btn
-                >
-              </v-col>
+            </v-col>
+          </v-row>
+          <v-row justify="center">
+            <v-col cols="2">
+              <v-btn explore @click="Preguntar()" color="primary"
+                >Preguntar</v-btn
+              >
             </v-col>
           </v-row>
         </v-card>
       </v-col>
     </v-row>
-  </v-contaier>
+  </v-container>
 </template>
 
 
