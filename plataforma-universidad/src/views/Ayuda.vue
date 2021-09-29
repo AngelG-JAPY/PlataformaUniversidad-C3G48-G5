@@ -16,22 +16,60 @@
           </v-row>
           <v-row>
             <v-col>
-              <div class="text-center d-flex pb-4">
+              <!--<div class="text-center d-flex pb-4">
                 <v-btn @click="all"> TODAS </v-btn>
                 <div>{{ panel }}</div>
                 <v-btn @click="none"> UNA </v-btn>
-              </div>
+              </div>-->
 
               <v-expansion-panels v-model="panel" multiple>
-                <v-expansion-panel v-for="(item, i) in items" :key="i">
+                <v-expansion-panel>
                   <v-expansion-panel-header
-                    >Header {{ item }}</v-expansion-panel-header
+                    ><b>¿Debo pagar algún valor por la página?
+                    ...</b></v-expansion-panel-header
                   >
                   <v-expansion-panel-content>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Por ahora no debeerás pagar ningún valor por el uso de la
+                    página, es completamente gratuito.
+                  </v-expansion-panel-content>
+                  <v-expansion-panel-header
+                    ><b> Olvidé mi contraseña ¿Cómo puedo reestablecerla?
+                    ...</b></v-expansion-panel-header
+                  >
+                  <v-expansion-panel-content>
+                    Para recuperar tu contraseña dirígete al módulo de inicio de
+                    sesion y haz click en "Olvidé mi contraseña", luego sigue
+                    las instrucciones que te enviaremos al correo. </v-expansion-panel-content
+                  ><v-expansion-panel-header
+                    ><b> ¿Qué beneficios tiene adquirir este producto o servicio?
+                    ...</b>
+                  </v-expansion-panel-header>
+                  <v-expansion-panel-content>
+                    Podrás seleccionar tus universidades favoritas y tenerlas en
+                    tu perfil disponibles a tu servicio, además estarás
+                    actualizado con las noticias mas relevantes del mercado de
+                    educación. </v-expansion-panel-content
+                  ><v-expansion-panel-header
+                    ><b>¿Cómo funciona? ...</b>
+                  </v-expansion-panel-header>
+                  <v-expansion-panel-content>
+                    Creas una cuenta en nuestra plataforma, que te brindara
+                    acceso a una pagina de búsqueda la cual le estableces unos
+                    criterios de búsqueda según tu perfil.
+                  </v-expansion-panel-content>
+                  <v-expansion-panel-header
+                    ><b>¿En cuánto tiempo tendré listo mi producto? ...</b>
+                  </v-expansion-panel-header>
+                  <v-expansion-panel-content>
+                    En el momento en que escojas tu favoritas podrás re
+                    direccionarte a la pagina de la universidad que te interesó
+                    para conocer mas … </v-expansion-panel-content
+                  ><v-expansion-panel-header
+                    ><b>¿Por qué debo utilizar esta plataforma?...</b>
+                  </v-expansion-panel-header>
+                  <v-expansion-panel-content>
+                    Te brindamos la oportunidad de realizar búsqueda y filtro a
+                    universidades para brindarte un mejor resultado
                   </v-expansion-panel-content>
                 </v-expansion-panel>
               </v-expansion-panels>
