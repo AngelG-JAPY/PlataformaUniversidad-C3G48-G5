@@ -6,28 +6,28 @@ module.exports = class UsersController {
         try {
             let user = req.body;
             user = await userModel.create(user);
-            user.password = undefined;
+            user.contraseña = undefined;
             res.status(201).json(user);
         } catch (err) {
             res.status(400).json({ "message": err.message })
         }
     }
 
-    // static async validateUser(req, res) {
-    //     try {
-    //         const credential = req.body;
-    //         const user = await userModel.findOne({ "username": credential.username });
-    //         if (user == undefined || user == null) {
-    //             res.status(404).json({ "message": "Usuario no existe" });
-    //         } else if (user.password != credential.password) {
-    //             res.status(403).json({ "message": "Usuario / contraseña no valido" });
-    //         } else {
-    //             user.password = undefined;
-    //             res.status(200).json(user);
-    //         }
+    static async validateUser(req, res) {
+        try {
+            const credential = req.body;
+            const user = await userModel.findOne({ "correo": credential.correo });
+            if (user == undefined || user == null) {
+                res.status(404).json({ "message": "Usuario no existe" });
+            } else if (user.contraseña != credential.contraseña) {
+                res.status(403).json({ "message": "Usuario / contraseña no valido" });
+            } else {
+                user.contraseña = undefined;
+                res.status(200).json(user);
+            }
 
-    //     } catch (err) {
-    //         res.status(400).json({ "message": err.message })
-    //     }
-    // }
+        } catch (err) {
+            res.status(400).json({ "message": err.message })
+        }
+    }
 }

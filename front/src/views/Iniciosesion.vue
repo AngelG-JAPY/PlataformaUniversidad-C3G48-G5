@@ -61,7 +61,7 @@
                             dark
                             block
                             tile
-                            @click="submit"
+                            v-on:click="loginFunction()"
                             >Entrar</v-btn
                           >
                         </v-col>
@@ -213,7 +213,10 @@
 </template>
 
 <script>
+
 import Recupassword from '../components/Recupassword.vue';
+import { validateUser } from "../services/Login.service";
+
 export default {
   components:{
     Recupassword,
@@ -257,16 +260,36 @@ export default {
     source: String,
   },
   computed: {
+    // De aqui hasta...
     progress() {
       return Math.min(100, this.value.length * 13);
     },
     color() {
       return ["error", "warning", "success"][Math.floor(this.progress / 40)];
     },
+    // aqui...es para la barra de progreso que aparece al ingresar una contraseña en el registro
   },
   methods: {
-    submit() {
-      this.$refs.form.submit();
+    // submit() {
+    //   this.$refs.form.submit();
+    // },
+
+    loginFunction() {
+      validateUser(this.email, this.password)
+        .then((response) => {
+          const user = response.data;
+          sessionStorage.setItem("correo", user.correo);
+          sessionStorage.setItem("role", user.role);
+          this.$emit("logged", undefined);
+          window.location.reload();
+        })
+        .catch((err) => {
+          this.showError = true;
+          this.error = err.response.data.message;
+          setInterval(() => {
+            this.showError = false;
+          }, 3000);
+        });
     },
   },
 };

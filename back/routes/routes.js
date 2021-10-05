@@ -13,5 +13,6 @@ router.delete("/products/:code", ProductsController.delete);
 
 
 router.post("/users", UsersController.insert);
+router.post("/authenticate", UsersController.validateUser);
 
 module.exports = router;
