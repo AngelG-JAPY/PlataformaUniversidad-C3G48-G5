@@ -1,4 +1,4 @@
-<template >
+<template>
   <v-container>
     <span class="background"></span>
     <v-row align="center" justify="center">
@@ -40,10 +40,15 @@
                             :rules="passwordRules"
                             required
                           />
-                          
-                              <recupassword/>
-                              
-                            
+                          <v-alert
+                            border="left"
+                            color="red lighten-2"
+                            dark
+                            v-model="showError"
+                          >
+                            {{ error }}
+                          </v-alert>
+                          <recupassword />
 
                           <v-row>
                             <v-col cols="12" sm="12">
@@ -61,7 +66,7 @@
                             dark
                             block
                             tile
-                            @click="submit"
+                            v-on:click="loginFunction()"
                             >Entrar</v-btn
                           >
                         </v-col>
@@ -188,6 +193,13 @@
                               ></v-progress-linear>
                             </template>
                           </v-text-field>
+                          
+
+                          <SuccessMessage
+                            :message="successMessage"
+                            :snackbar="successShow"
+                            :close="closeSuccessDialog"
+                          ></SuccessMessage>
 
                           <v-btn
                             :disabled="!valid"
@@ -195,7 +207,7 @@
                             dark
                             block
                             tile
-                            @click="submit"
+                            @click="RegistroFunction()"
                             >Registrarse</v-btn
                           >
                         </v-col>
@@ -213,13 +225,16 @@
 </template>
 
 <script>
-import Recupassword from '../components/Recupassword.vue';
+import Recupassword from "../components/Recupassword.vue";
+import { validateUser } from "../Services/Loginservice";
+import { insert } from "../Services/Registro.service";
+import SuccessMessage from "../components/SuccessMessage.vue";
 export default {
-  components:{
+  components: {
     Recupassword,
+    SuccessMessage,
   },
   data: () => ({
-    
     valid: true,
     value: "",
     custom: true,
@@ -252,22 +267,74 @@ export default {
         "La contraseña debe tener un minimo de 8 caracteres",
     ],
     step: 1,
+    showError: false,
+    error: "",
+    successMessage: "",
+    successShow: false,
   }),
   props: {
     source: String,
   },
   computed: {
+    // De aqui hasta...
     progress() {
       return Math.min(100, this.value.length * 13);
     },
     color() {
       return ["error", "warning", "success"][Math.floor(this.progress / 40)];
     },
+    // aqui...es para la barra de progreso que aparece al ingresar una contraseña en el registro
   },
   methods: {
-    submit() {
-      this.$refs.form.submit();
+
+    openSuccessDialog(mensaje) {
+      this.successMessage = mensaje;
+      this.successShow = true;
     },
+    closeSuccessDialog() {
+      this.successShow = false;
+      this.$router.push("/Busqueda");
+    },
+    loginFunction() {
+      validateUser(this.email, this.password)
+        .then((response) => {
+          const user = response.data;
+          sessionStorage.setItem("correo", user.correo);
+          sessionStorage.setItem("role", user.role);
+          this.$emit("logged", undefined);
+          window.location.reload();
+        })
+        .catch((err) => {
+          this.showError = true;
+          this.error = err.response.data.message;
+          setInterval(() => {
+            this.showError = false;
+          }, 3000);
+        });
+    },
+    RegistroFunction() {
+      const user = {
+        nombre: this.name,
+        apellido: this.apellido,
+        correo: this.correo,
+        contraseña: this.value,
+      };
+      insert(user)
+      .then((response) => {
+          this.openSuccessDialog(
+            "Se ha creado el usuario: " + response.data._id
+          );
+      })
+      .catch((err) => {
+          this.showError = true;
+          this.error = err.response.data.message;
+          setInterval(() => {
+            this.showError = false;
+          }, 3000);
+      });
+      
+    },
+    
   },
 };
 </script>
