@@ -20,7 +20,7 @@ mongoose
   .then(() => console.log("conectado a la base de datos"))
   .catch((err) => console.error(err));
 
-//Iniciar el servidor
+// Iniciar el servidor
 const port = process.env.PORT;
 app.listen(port, () =>
   console.log(`Servidor corriendo en http://localhost:${port}`)
