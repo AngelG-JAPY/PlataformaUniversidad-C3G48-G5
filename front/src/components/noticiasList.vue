@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { getAllNoticias} from "../services/Noticias.service"
+import { getAllNoticias} from "../Services/Noticias.service"
 export default {
     data() {
     return {
