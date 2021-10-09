@@ -1,10 +1,7 @@
 import httpClient from "./httpClient";
 
-const ENDPOINT = "/api/noticias";
+const END_POINT = "/api/noticias";
 
-const getALLNoticias = () => httpClient.get(ENDPOINT);
+const getAllNoticias = () => httpClient.get(END_POINT);
 
-export {
-    getALLNoticias
-    
-}
+export { getAllNoticias };
