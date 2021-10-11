@@ -174,21 +174,13 @@
 import noticiasList from "../components/noticiasList";
 export default {
   components: {
-    noticiasList
+    noticiasList,
     
    },
   data() {
-    return {
-      noticias: [],
-    };
+    
   },
-  mounted() {
-    getAllNoticias()
-      .then((response) => {
-        this.noticias = response.data;
-      })
-      .catch((err) => console.error(err));
-  },
+  
   
 };
 // export default {
