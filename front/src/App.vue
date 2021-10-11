@@ -1,14 +1,6 @@
 <template>
   <v-app>
-    <!-- <v-navigation-drawer
-      class="deep-purple accent-4"
-      src="https://cdn.vuetifyjs.com/images/backgrounds/bg-2.jpg"
-      v-model="drawer"
-      dark
-      app
-    >
-      <Menu ></Menu>
-    </v-navigation-drawer> -->
+    
 
      
       <Menu />
@@ -34,10 +26,12 @@
 import Footer from './components/Footer.vue';
 import Menu from './components/Menu.vue';
 
+
 export default {
   components:{
     Menu,
-    Footer
+    Footer,
+
     
   },
   data() {
