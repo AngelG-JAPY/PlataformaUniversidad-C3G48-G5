@@ -6,7 +6,6 @@ const noticiaSchema = mongoose.Schema({
   decripcion: String,
   Enlace: String,
   Etiqueta: Array,
-  
 });
 
 module.exports = mongoose.model("Noticia", noticiaSchema);

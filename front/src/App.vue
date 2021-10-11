@@ -1,17 +1,9 @@
 <template>
   <v-app>
-    
+    <Menu />
 
-     
-      <Menu />
-    
-    
-
-    <!-- Sizes your content based upon application components -->
     <v-main>
-      <!-- Provides the application the proper gutter -->
       <v-container fluid>
-        <!-- If using vue-router -->
         <router-view></router-view>
       </v-container>
     </v-main>
@@ -23,16 +15,14 @@
 </template>
 
 <script>
-import Footer from './components/Footer.vue';
-import Menu from './components/Menu.vue';
+import Footer from "./components/Footer.vue";
+import Menu from "./components/Menu.vue";
 
 
 export default {
-  components:{
+  components: {
     Menu,
     Footer,
-
-    
   },
   data() {
     return {
@@ -49,26 +39,23 @@ export default {
 };
 </script>
 <style>
-body{
+body {
   margin: 0px;
 }
-body::-webkit-scrollbar-track
-{
-	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 10px;
-	background-color: #ffffff;
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #ffffff;
 }
 
-body::-webkit-scrollbar
-{
-	width: 12px;
-	background-color:#ffffff ;
+body::-webkit-scrollbar {
+  width: 12px;
+  background-color: #ffffff;
 }
 
-body::-webkit-scrollbar-thumb
-{
-	border-radius: 10px;
-	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #0d6efd;
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #0d6efd;
 }
 </style>

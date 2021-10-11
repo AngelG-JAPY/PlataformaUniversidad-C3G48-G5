@@ -29,7 +29,9 @@
 
             <v-list>
               <v-list-item>
-                <v-list-item-title><router-link to="/">Inicio</router-link></v-list-item-title>
+                <v-list-item-title
+                  ><router-link to="/">Inicio</router-link></v-list-item-title
+                >
               </v-list-item>
               <!-- <v-list-item>
                 <v-list-item-title><router-link to="/about">Acerca de</router-link></v-list-item-title>

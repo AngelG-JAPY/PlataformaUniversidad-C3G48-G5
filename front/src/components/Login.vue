@@ -193,7 +193,6 @@
                               ></v-progress-linear>
                             </template>
                           </v-text-field>
-                          
 
                           <SuccessMessage
                             :message="successMessage"
@@ -286,7 +285,6 @@ export default {
     // aqui...es para la barra de progreso que aparece al ingresar una contraseña en el registro
   },
   methods: {
-
     openSuccessDialog(mensaje) {
       this.successMessage = mensaje;
       this.successShow = true;
@@ -320,21 +318,19 @@ export default {
         contraseña: this.value,
       };
       insert(user)
-      .then((response) => {
+        .then((response) => {
           this.openSuccessDialog(
             "Se ha creado el usuario: " + response.data._id
           );
-      })
-      .catch((err) => {
+        })
+        .catch((err) => {
           this.showError = true;
           this.error = err.response.data.message;
           setInterval(() => {
             this.showError = false;
           }, 3000);
-      });
-      
+        });
     },
-    
   },
 };
 </script>
@@ -366,5 +362,3 @@ export default {
   background-color: rgba(164, 162, 197, 0.707) !important;
 }
 </style>
-
-
