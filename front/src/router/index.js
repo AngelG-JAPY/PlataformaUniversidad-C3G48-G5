@@ -1,52 +1,47 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "../views/Home.vue";
 
-
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: "/",
+    name: "Home",
+    component: Home,
   },
-  // {
-  //   path: '/About',
-  //   name: 'About',
-  //   component: () => import('../views/About.vue')
-  // },
+
   {
-    path: '/iniciosesion',
-    name: 'Iniciosesion',
-    component: () => import('../views/Iniciosesion.vue')
+    path: "/iniciosesion",
+    name: "Iniciosesion",
+    component: () => import("../views/Iniciosesion.vue"),
   },
   {
-    path: '/busqueda',
-    name: 'Busquedad',
-    component: () => import('../views/Busqueda.vue')
+    path: "/busqueda",
+    name: "Busquedad",
+    component: () => import("../views/Busqueda.vue"),
   },
   {
-    path: '/ayuda',
-    name: 'Ayuda',
-    component: () => import('../views/Ayuda.vue')
+    path: "/ayuda",
+    name: "Ayuda",
+    component: () => import("../views/Ayuda.vue"),
   },
   {
-    path: '/noticias',
-    name: 'Noticias',
-    component: () => import('../views/Noticias.vue')
+    path: "/noticias",
+    name: "Noticias",
+    component: () => import("../views/Noticias.vue"),
   },
   {
-    path: '/perfil',
-    name: 'Perfil',
-    component: () => import('../views/Perfil.vue')
-  }
-]
+    path: "/perfil",
+    name: "Perfil",
+    component: () => import("../views/Perfil.vue"),
+  },
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
