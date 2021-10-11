@@ -25,8 +25,9 @@
 
 <script>
 import { getAllNoticias} from "../Services/Noticias.service"
+
 export default {
-    data() {
+  data() {
     return {
       noticias: [],
     };
@@ -38,9 +39,7 @@ export default {
       })
       .catch((err) => console.error(err));
   },
-
 };
-
 </script>
 
 <style></style>

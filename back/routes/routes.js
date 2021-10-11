@@ -1,6 +1,7 @@
 const express = require("express");
 const ProductsController = require("../controllers/productsController");
 const NoticiasController = require("../controllers/noticiasController");
+const UsersController = require("../controllers/usersController");
 
 const router = express.Router();
 
@@ -14,8 +15,9 @@ router.delete("/products/:code", ProductsController.delete);
 // rutas de noticias
 router.get("/noticias", NoticiasController.getAll);
 router.post("/noticias", NoticiasController.insert);
+
+//ruta user
+router.post("/users", UsersController.insert);
+router.post("/authenticate", UsersController.validateUser);
+
 module.exports = router;
-
-
-
-
