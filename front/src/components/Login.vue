@@ -48,18 +48,9 @@
                           >
                             {{ error }}
                           </v-alert>
-                          <recupassword />
+                          <!-- <recupassword /> -->
 
-                          <v-row>
-                            <v-col cols="12" sm="12">
-                              <v-checkbox
-                                label="Mantener sesión activa"
-                                class="mt-n1"
-                                color="blue"
-                              >
-                              </v-checkbox>
-                            </v-col>
-                          </v-row>
+                          
                           <v-btn
                             :disabled="!valid"
                             color="blue"
@@ -224,13 +215,13 @@
 </template>
 
 <script>
-import Recupassword from "./Recupassword.vue";
+// import Recupassword from "./Recupassword.vue";
 import { validateUser } from "../Services/Loginservice";
 import { insert } from "../Services/Registro.service";
 import SuccessMessage from "./SuccessMessage.vue";
 export default {
   components: {
-    Recupassword,
+    // Recupassword,
     SuccessMessage,
   },
   data: () => ({
