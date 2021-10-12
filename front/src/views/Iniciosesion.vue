@@ -290,7 +290,7 @@ export default {
           sessionStorage.setItem("correo", user.correo);
           sessionStorage.setItem("role", user.role);
           sessionStorage.setItem("log", true);
-          this.$emit("logged", undefined);
+          this.$emit("logged", true);
           this.$router.push("/busqueda");
         })
         .catch((err) => {
