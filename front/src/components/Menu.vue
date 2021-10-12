@@ -7,15 +7,15 @@
 
         <v-btn text><router-link to="/">Inicio</router-link></v-btn>
 
-        <v-btn text v-if="!isLoggedIn"><router-link to="/iniciosesion">Inicio sesion/Registro</router-link></v-btn>
+        <v-btn text v-if="!isLogged"><router-link to="/iniciosesion">Inicio sesion/Registro</router-link></v-btn>
 
-        <v-btn text v-if="isLoggedIn"><router-link to="/ayuda">Ayuda</router-link></v-btn>
+        <v-btn text v-if="isLogged"><router-link to="/ayuda">Ayuda</router-link></v-btn>
 
-        <button id="btn3" v-if="!isLoggedIn" type="button"><router-link class="btn btn-borde" to="/ayuda">Ayuda</router-link></button>
+        <button id="btn3" v-if="!isLogged" type="button"><router-link class="btn btn-borde" to="/ayuda">Ayuda</router-link></button>
         
-        <v-btn text v-if="isLoggedIn"><router-link to="/busqueda">Busqueda</router-link></v-btn>
+        <v-btn text v-if="isLogged"><router-link to="/busqueda">Busqueda</router-link></v-btn>
 
-        <v-btn text v-if="isLoggedIn"><router-link to="/noticias">Noticias</router-link></v-btn>
+        <v-btn text v-if="isLogged"><router-link to="/noticia">Noticias</router-link></v-btn>
 
         
         <!-- <v-btn v-if="isLoggedIn"
@@ -127,6 +127,7 @@ export default {
       showLogin: false,
       btns: [["Custom", "b-xl"]],
       colors: ["teal darken-1"],
+      
       // icons: {
       //  mdiAccountBox
       // },
@@ -139,8 +140,9 @@ export default {
     logOut() {
       sessionStorage.removeItem("correo");
       sessionStorage.removeItem("role");
+      sessionStorage.removeItem("log")
       this.$router.push("/");
-      window.location.reload();
+      
     },
   },
   computed: {
@@ -148,7 +150,14 @@ export default {
       const username = sessionStorage.getItem("correo");
       return username != undefined;
     },
+    isLogged() {
+      const logged = sessionStorage.getItem("log");
+      return logged != undefined;
+    },
   },
+  
+    
+  
 };
 </script>
 <style scoped>

@@ -18,7 +18,7 @@ const routes = [
   },
   {
     path: "/busqueda",
-    name: "Busquedad",
+    name: "Busqueda",
     component: () => import("../views/Busqueda.vue"),
   },
   {
@@ -27,7 +27,7 @@ const routes = [
     component: () => import("../views/Ayuda.vue"),
   },
   {
-    path: "/noticias",
+    path: "/noticia",
     name: "Noticias",
     component: () => import("../views/Noticias.vue"),
   },

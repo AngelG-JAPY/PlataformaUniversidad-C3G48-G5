@@ -282,7 +282,7 @@ export default {
     },
     closeSuccessDialog() {
       this.successShow = false;
-      this.$router.push("/Busqueda");
+      this.$router.push("/busqueda");
     },
     loginFunction() {
       validateUser(this.email, this.password)
@@ -290,9 +290,10 @@ export default {
           const user = response.data;
           sessionStorage.setItem("correo", user.correo);
           sessionStorage.setItem("role", user.role);
+          sessionStorage.setItem("log", true);
           this.$emit("logged", undefined);
-          this.$router.push("/Busqueda");
-          window.location.reload();
+          this.$router.push("/busqueda");
+         
         })
         .catch((err) => {
           this.showError = true;
