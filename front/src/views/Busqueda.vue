@@ -14,18 +14,11 @@
     <v-row class="mt-10" justify="left">
       <v-col cols="12" sm="12" lg="3">
         <v-form ref="form" v-model="valid" lazy-validation>
-          <v-select v-model="select" :pais="pais" label="Pais"></v-select>
-          <v-select
-            v-model="select"
-            :departamento="departamento"
-            label="Departamento"
-          ></v-select>
-          <v-select v-model="select" :ciudad="Ciudad" label="Ciudad"></v-select>
-          <v-select
-            v-model="select"
-            :carrera="Carrera"
-            label="Carrera"
-          ></v-select>
+          <v-select v-model="select" :items="pais" label="Pais"></v-select>
+          <v-select v-model="select" :items="departamento" label="Departamento" ></v-select>
+          <v-select v-model="select" :items="ciudad" label="Ciudad"></v-select>
+          <v-select v-model="select" :items="carrera" label="Carrera"></v-select>
+
 
           <v-btn color="success" class="mr-4"> Buscar </v-btn>
 
@@ -67,7 +60,6 @@ export default {
   data() {
     return {
       pais: ["Colombia"],
-
       departamento: [
         "Valle Del cauca",
         "Norte De Santander",
@@ -81,7 +73,6 @@ export default {
         "Diseño Grafico",
         "Medicina",
       ],
-
       imagenes: [
         {
           href: "../assets/slbt3.jpg",
@@ -95,7 +86,7 @@ export default {
         {
           src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg",
         },
-      ],
+      ]
     };
   },
 };

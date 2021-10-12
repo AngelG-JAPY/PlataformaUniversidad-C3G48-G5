@@ -2,6 +2,7 @@ const express = require("express");
 const ProductsController = require("../controllers/productsController");
 const NoticiasController = require("../controllers/noticiasController");
 const UsersController = require("../controllers/usersController");
+const UniversidadesController = require("../controllers/universidadesController");
 
 const router = express.Router();
 
@@ -19,5 +20,9 @@ router.post("/noticias", NoticiasController.insert);
 //ruta user
 router.post("/users", UsersController.insert);
 router.post("/authenticate", UsersController.validateUser);
+
+//ruta universidad
+router.get("/universidades", UniversidadesController.getAll);
+router.post("/universidades", UniversidadesController.insert);
 
 module.exports = router;
