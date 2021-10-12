@@ -300,6 +300,7 @@ export default {
           sessionStorage.setItem("correo", user.correo);
           sessionStorage.setItem("role", user.role);
           this.$emit("logged", undefined);
+          this.$router.push("/Busqueda");
           window.location.reload();
         })
         .catch((err) => {
