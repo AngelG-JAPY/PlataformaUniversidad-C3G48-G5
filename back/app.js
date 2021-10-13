@@ -25,3 +25,33 @@ const port = process.env.PORT;
 app.listen(port, () =>
   console.log(`Servidor corriendo en direccion http://localhost:${port}`)
 );
+// conexion a correo electroinco universidadg48g5@gmail.com
+var nodemailer = require("nodemailer")
+
+app.post("/send-email" , (req,res) => {
+      var transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        post: 587,
+        secure: false,
+        auth: {
+          user:"universidadg48g5@gmail.com",
+          pass:"kuobcsoodfhzckel",
+
+        }
+      });
+      var mailOptions = {
+        from:"universidad",
+        to:"universidadg48g5@gmail.com",
+        subject:"Pregunta Nueva",
+        text:"prueva var =",
+      }
+      transporter.sendMail(mailOptions, (error,info) => {
+        if (error) {
+          res.status(500).sen(error.message);          
+        } else {
+          console.log("Email enviado.");
+          res.status(200).jsonp(req.body);
+        }
+      });
+});
+
