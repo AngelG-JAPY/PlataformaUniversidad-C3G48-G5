@@ -1,10 +1,10 @@
 <template>
   <v-app>
-    <Menu />
+    <Menu :menuProp="dataAppLoggedIn" @logged="userLoggedIn"/>
 
     <v-main>
       <v-container fluid>
-        <router-view ></router-view>
+        <router-view @logged="userLoggedIn"></router-view>
       </v-container>
     </v-main>
 
@@ -18,7 +18,6 @@
 import Footer from "./components/Footer.vue";
 import Menu from "./components/Menu.vue";
 
-
 export default {
   components: {
     Menu,
@@ -28,12 +27,16 @@ export default {
     return {
       title: "Mi pagina",
       drawer: false,
+      dataAppLoggedIn: false,
     };
   },
   methods: {
     toggleDrawer() {
       this.drawer = !this.drawer;
       this.title = this.drawer ? "Mi otra pagina" : "Cesar's page";
+    },
+    userLoggedIn(loggedIn) {
+      this.dataAppLoggedIn = loggedIn;
     },
   },
 };

@@ -11,16 +11,22 @@
         ></v-carousel-item>
       </v-carousel>
     </v-card>
+
+    <!-- Acá inicia el formulario de busqueda -->
     <v-row class="mt-10" justify="left">
       <v-col cols="12" sm="12" lg="3">
         <v-form ref="form" v-model="valid" lazy-validation>
+
           <v-select v-model="select" :pais="pais" label="Pais"></v-select>
+
           <v-select
             v-model="select"
             :departamento="departamento"
             label="Departamento"
           ></v-select>
+
           <v-select v-model="select" :ciudad="Ciudad" label="Ciudad"></v-select>
+          
           <v-select
             v-model="select"
             :carrera="Carrera"
@@ -44,6 +50,7 @@
 
 <script>
 import busquedalist from "../components/busquedaList.vue"
+// import { getAllUniversidades } from "../Services"
 export default {
   components:{
     busquedalist,

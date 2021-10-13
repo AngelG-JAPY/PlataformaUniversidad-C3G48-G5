@@ -4,47 +4,29 @@
       <v-toolbar-title>Universidades</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only">
-
         <v-btn text><router-link to="/">Inicio</router-link></v-btn>
-
-        <v-btn text v-if="!isLogged"><router-link to="/iniciosesion">Inicio sesion/Registro</router-link></v-btn>
-
-        <v-btn text v-if="isLogged"><router-link to="/ayuda">Ayuda</router-link></v-btn>
-
-        <button id="btn3" v-if="!isLogged" type="button"><router-link class="btn btn-borde" to="/ayuda">Ayuda</router-link></button>
-        
-        <v-btn text v-if="isLogged"><router-link to="/busqueda">Busqueda</router-link></v-btn>
-
-        <v-btn text v-if="isLogged"><router-link to="/noticia">Noticias</router-link></v-btn>
-
-        
-        <!-- <v-btn v-if="isLoggedIn"
-            ><router-link to="/perfil">Perfil</router-link></v-btn
-        > -->
-        <v-menu
-            v-for="[text, rounded] in btns"
-            :key="text"
-            :rounded="rounded"
-            offset-y
-          >
-            <template v-slot:activator="{ on }">
-              <v-btn text  v-if="isLoggedIn" v-bind="attrs" v-on="on">
-                <v-icon>mdi-account</v-icon> PERFIL
-              </v-btn>
-            </template>
-
-            <v-list>
-              <v-list-item>
-                <v-list-item-title v-if="isLoggedIn"
-                  ><router-link to="/perfil">Mi perfil</router-link></v-list-item-title
-                >
-              </v-list-item>
-              <v-list-item v-if="isLoggedIn" @click="logOut()">
-                <v-list-item-title>Cerrar sesión</v-list-item-title>
-              </v-list-item>
-            </v-list>
-        </v-menu>
-
+        <v-btn text v-if="!isLogged"
+          ><router-link to="/iniciosesion"
+            >Inicio sesión/Registro</router-link
+          ></v-btn
+        >
+        <v-btn text v-if="isLogged"
+          ><router-link to="/ayuda">Ayuda</router-link></v-btn
+        >
+        <button id="btn3" v-if="!isLogged" type="button">
+          <router-link class="btn btn-borde" to="/ayuda">Ayuda</router-link>
+        </button>
+        <v-btn text v-if="isLogged"
+          ><router-link to="/busqueda">Busqueda</router-link></v-btn
+        >
+        <v-btn text v-if="isLogged"
+          ><router-link to="/noticias">Noticias</router-link></v-btn
+        >
+        <v-btn text v-if="isLogged"
+          ><router-link to="/perfil">Perfil</router-link></v-btn
+        >
+        <v-btn text v-if="isLogged" @click="logOut()"
+          >Cerrar Sesión</v-btn>
       </v-toolbar-items>
       <div class="hidden-sm-and-up">
         <v-row justify="space-around">
@@ -94,7 +76,7 @@
               <v-list-item>
                 <v-list-item-title v-if="isLoggedIn"
                   ><router-link to="/noticias"
-                    >Noticis</router-link
+                    >Noticias</router-link
                   ></v-list-item-title
                 >
               </v-list-item>
@@ -114,23 +96,23 @@
 </template>
 
 <script>
-// import { mdiAccountBox } from '@mdi/js';
 // import login from "./login.vue";
 export default {
   //  components: {
-  //   mdiAccountBox,
+  //   login,
   // },
   name: "Menu",
-  
+  props: {
+    menuProp:{
+      type: Boolean,
+      default: false
+    }
+  },
   data: () => {
     return {
       showLogin: false,
       btns: [["Custom", "b-xl"]],
       colors: ["teal darken-1"],
-      
-      // icons: {
-      //  mdiAccountBox
-      // },
     };
   },
   methods: {
@@ -140,9 +122,9 @@ export default {
     logOut() {
       sessionStorage.removeItem("correo");
       sessionStorage.removeItem("role");
-      sessionStorage.removeItem("log")
+      this.$emit("logged", false);
       this.$router.push("/");
-      
+      // window.location.reload();
     },
   },
   computed: {
@@ -150,14 +132,7 @@ export default {
       const username = sessionStorage.getItem("correo");
       return username != undefined;
     },
-    isLogged() {
-      const logged = sessionStorage.getItem("log");
-      return logged != undefined;
-    },
   },
-  
-    
-  
 };
 </script>
 <style scoped>
