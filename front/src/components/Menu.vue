@@ -137,25 +137,11 @@ export default {
 };
 </script>
 <style scoped>
-/* .btn-borde {
-  padding: 0.375rem 0.75rem;
-  border: 1px solid #007bff;
-  border-radius: 0.25rem;
-  color: #007bff;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
-}
 
-.btn-borde:hover,
-.btn-borde:active,
-.btn-borde:focus {
-  color: #fff;
-  background-color: #007bff;
-} */
 
 .v-toolbar__content {
      background: #ecf0f3 !important;
 }
-/* .btn-lindu{
 
   display:flex;
   justify-content: center;
