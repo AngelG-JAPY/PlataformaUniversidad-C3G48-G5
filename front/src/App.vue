@@ -4,7 +4,7 @@
 
     <v-main>
       <v-container fluid>
-        <router-view @logged="userLoggedIn"></router-view>
+        <router-view  @logged="userLoggedIn"></router-view>
       </v-container>
     </v-main>
 

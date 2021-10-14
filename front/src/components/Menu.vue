@@ -1,7 +1,14 @@
 <template>
   <v-card class="contenedor" color="grey">
-    <v-toolbar flat class="mainHeader" style="background: #ecf0f3;">
-      <v-toolbar-title>Universidades</v-toolbar-title>
+    <v-toolbar flat class="mainHeader" style="background: #fff;">
+      <v-toolbar-title>
+        
+        <img src="../assets/logo.png" class="logo"  alt="">
+        
+        
+        
+        
+        </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only">
         <button text class="btn btn-lindu" ><router-link to="/" class="text">Inicio</router-link></button>
@@ -10,24 +17,25 @@
           <router-link to="/iniciosesion" class="text">Inicio sesión/Registro</router-link>
         </button>
         
-        <v-btn text v-if="menuProp"
+        <!-- <v-btn text v-if="menuProp"
           ><router-link to="/ayuda">Ayuda</router-link></v-btn
-        >
-        <button id="btn3" v-if="!menuProp" type="button" class="btn btn-lindu" >
+        > -->
+        <button id="btn3" v-if="menuProp" type="button" class="btn btn-lindu" >
           <router-link  to="/ayuda" class="text">Ayuda</router-link>
         </button>
         
-        <v-btn text v-if="menuProp"
-          ><router-link to="/busqueda">Busqueda</router-link></v-btn
-        >
-        <v-btn text v-if="menuProp"
-          ><router-link to="/noticias">Noticias</router-link></v-btn
-        >
-        <v-btn text v-if="menuProp"
-          ><router-link to="/perfil">Perfil</router-link></v-btn
-        >
-        <v-btn text v-if="menuProp" @click="logOut()"
-          >Cerrar Sesión</v-btn>
+        <button  v-if="menuProp" type="button" class="btn btn-lindu" >
+          <router-link  to="/busqueda" class="text">Busqueda</router-link>
+        </button>
+
+        <button  v-if="menuProp" type="button" class="btn btn-lindu" >
+          <router-link  to="/noticias" class="text">Noticias</router-link>
+        </button>
+        <button  v-if="menuProp" type="button" class="btn btn-lindu" >
+          <router-link  to="/perfil" class="text">Perfil</router-link>
+        </button>
+        <button text v-if="menuProp" class="btn btn-lindu" @click="logOut()"
+          ><span class="text">Cerrar Sesión</span></button>
       </v-toolbar-items>
       <div class="hidden-sm-and-up">
         <v-row justify="space-around">
@@ -139,76 +147,95 @@ export default {
 <style scoped>
 
 
-.v-toolbar__content {
-     background: #ecf0f3 !important;
+
+.logo{
+  display: block;
+  position: flex;
+  width: 25%;
+  height: 25%;
 }
 
+
+
+.btn-lindu {
+  margin-top: 5px;
+  margin-bottom: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
   display:flex;
   justify-content: center;
   align-items: center;
   width: auto;
   height: auto;
-  background: #e5e5e5;
-  background-size: 55px;
-  margin-top: 5px;
-  margin-bottom: 8px;
-  margin-left: 8px;
-  margin-right: 8px;
-  padding: 5px;
-  border-radius: 10px;
-  box-shadow: -10px -10px 15px #fff,
-  10px 10px 15px #c1c1c1,
-  inset 0px 0px 0px #fff,
-  inset 0px 0px 0px #c1c1c1;
-  transition: all 300ms ease;
+  cursor: pointer;
+  border-bottom:#2196F3 5px solid;
+  
+  border-radius: 5px;
+  box-shadow:  0px 15px 10px -15px #2196F3 ;
+  position: relative;
 }
-.btn-lindu:hover{
-  box-shadow: 0px 0px 0px #fff,
-  0px 0px 0px #c1c1c1,
-  inset -10px -10px 15px #fff,
-  inset 10px 10px 10px #c1c1c1;
- 
 
-}
 .text{
-  text-shadow: 1px 1px 2px rgb(32, 63, 147);
-  color: rgb(26, 72, 199);
-}
-.text:hover{
-   color: rgb(26, 72, 199);
-  text-shadow: 0px 0px 0px rgb(32,63,147);
-} */
+  font-size: 18px;
+  text-decoration: none;
+  color: #2196F3;
+  text-shadow: 0 0 2px hsl(0 0% 100% / 0.3), 0 0 2px currentColor;
 
-.btn-lindu{
-  background: rgba(255,255,255,0.05);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-  border-top: 1px solid rgba(255,255,255,0.1);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  border-radius: 30px;
+}
+
+.btn-lindu::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: #2196F3;
+  
+
+  top: 12px;
+  left: 0;
+  width: auto;
+  height:auto;
+
+  transform: perspective(2px) rotateX(40deg) scale(1, 0.35);
+  filter: blur(5px);
+  opacity: 0.7;
+}
+
+.btn-lindu::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 5px 2px #2196F3;
+  opacity: 0;
+  background-color: #2196F3;
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.btn-lindu:hover,
+.btn-lindu:focus {
   color: #fff;
-  z-index: 1;
-  overflow:hidden;
-  transition: 0.5s;
-  backdrop-filter: blur(15px);
+  text-shadow: none;
+  
 }
-.btn-lindu:hover{
-  letter-spacing:3px;
+.text:focus{
+    color: #f32121;
+    
 }
-.btn .text ::before{ 
-  /* agregar el otro contenedor */
-  content: '';
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(to left, rgba(255,255,255,0.15), transparent);
-  transform: skewX(45deg) translateX(0);
-  transition:0.5s;
+.text:hover {
+  color: #fff;
+  text-shadow: none;
 }
-.btn:hover .text::before{
-  /* aqui igual */
- transform: skewX(45deg) translateX(200%);
-}
-.btn::before{
 
+.btn-lindu:hover::before,
+.btn-lindu:focus::before {
+  opacity: 1;
+}
+.btn-lindu:hover::after,
+.btn-lindu:focus::after {
+  opacity: 1;
 }
 
 a:-webkit-any-link {

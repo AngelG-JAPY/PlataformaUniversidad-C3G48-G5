@@ -8,6 +8,7 @@
           :src="imagen.src"
           reverse-transition="fade-transition"
           transition="fade-transition"
+          title="BIENVENIDO"
         ></v-carousel-item>
       </v-carousel>
     </v-card>
@@ -75,7 +76,7 @@ export default {
 
       imagenes: [
         {
-          href: "../assets/slbt3.jpg",
+          src: require("../assets/slbt3.jpg")
         },
         {
           src: "https://cdn.vuetifyjs.com/images/carousel/sky.jpg",
