@@ -118,10 +118,10 @@ export default {
         })
         .catch((err) => console.error(err));
     },
-    consultarsms(){
-      const asyn sms =[
-      ]
-    }
+    // consultarsms(){
+    //   const asyn sms =[
+    //   ]
+    // }
   },
 };
 </script>
