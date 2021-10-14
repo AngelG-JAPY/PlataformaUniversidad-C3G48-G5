@@ -3,6 +3,7 @@ const ProductsController = require("../controllers/productsController");
 const NoticiasController = require("../controllers/noticiasController");
 const UsersController = require("../controllers/usersController");
 const BusquedasController = require("../controllers/busquedasController");
+const ContactoController = require("../controllers/contactoController");
 
 const router = express.Router();
 
@@ -24,4 +25,8 @@ router.post("/authenticate", UsersController.validateUser);
 //rutas busqueda
 router.get("/busquedas", BusquedasController.getAll);
 router.post("/busquedas", BusquedasController.insert);
+
+//ruta contacto
+router.post("/contacto", ContactoController.insert);
+router.get("/mostrarsms", ContactoController.getAll);
 module.exports = router;

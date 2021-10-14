@@ -38,14 +38,19 @@
       <v-row>
         <v-col cols="12" md="12">
           <div>
-            <v-text-field label="Nombre" hide-details="auto"></v-text-field>
-            <v-text-field label="Email"></v-text-field>
+            <v-text-field
+              label="Nombre"
+              v-model="name"
+              hide-details="auto"
+            ></v-text-field>
+            <v-text-field label="Email" v-model="email"></v-text-field>
             <v-textarea
               filled
               name="input-7-4"
               label="Descripcion"
+              v-model="description"
             ></v-textarea>
-            <v-btn depressed color="blue">
+            <v-btn depressed color="blue" @click="insertContact()">
               Enviar
             </v-btn>
           </div>
@@ -78,9 +83,14 @@
 </template>
 
 <script>
+import { crearContacto } from "../Services/Contactos.service";
 import { Carousel3d, Slide } from "vue-carousel-3d";
 export default {
   data: () => ({
+    sms: [],
+    name: "",
+    email: "",
+    description: "",
     slides: [
       { src: require("../assets/img/andes.jpg"), text: "U. Andes" },
       { src: require("../assets/img/antioquia.jpg"), text: "U. Antioquia" },
@@ -94,6 +104,24 @@ export default {
   components: {
     Carousel3d,
     Slide,
+  },
+  methods: {
+    insertContact() {
+      const contacto = {
+        name: this.name,
+        email: this.email,
+        description: this.description,
+      };
+      crearContacto(contacto)
+        .then(() => {
+          console.log(`Mensanje enviado`);
+        })
+        .catch((err) => console.error(err));
+    },
+    consultarsms(){
+      const asyn sms =[
+      ]
+    }
   },
 };
 </script>
