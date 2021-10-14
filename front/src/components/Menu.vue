@@ -5,24 +5,24 @@
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only">
         <v-btn text><router-link to="/">Inicio</router-link></v-btn>
-        <v-btn text v-if="!isLoggedIn"
+        <v-btn text v-if="!isLogged"
           ><router-link to="/iniciosesion"
             >Inicio sesion/Registro</router-link
           ></v-btn
         >
-        <v-btn text v-if="isLoggedIn"
+        <v-btn text v-if="isLogged"
           ><router-link to="/ayuda">Ayuda</router-link></v-btn
         >
-        <button id="btn3" v-if="!isLoggedIn" type="button">
+        <button id="btn3" v-if="!isLogged" type="button">
           <router-link class="btn btn-borde" to="/ayuda">Ayuda</router-link>
         </button>
-        <v-btn text v-if="isLoggedIn"
+        <v-btn text v-if="isLogged"
           ><router-link to="/busqueda">Busqueda</router-link></v-btn
         >
-        <v-btn text v-if="isLoggedIn"
+        <v-btn text v-if="isLogged"
           ><router-link to="/noticias">Noticias</router-link></v-btn
         >
-        <v-btn text v-if="isLoggedIn"
+        <v-btn text v-if="isLogged"
           ><router-link to="/perfil">Perfil</router-link></v-btn
         >
       </v-toolbar-items>
@@ -100,6 +100,9 @@ export default {
   //   login,
   // },
   name: "Menu",
+  props: {
+    isLogged: false,
+  },
   data: () => {
     return {
       showLogin: false,

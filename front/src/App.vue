@@ -1,10 +1,10 @@
 <template>
   <v-app>
-    <Menu />
+    <Menu :isLogged="loggedIn" />
 
     <v-main>
       <v-container fluid>
-        <router-view></router-view>
+        <router-view v-on:logged="userLoggedIn"></router-view>
       </v-container>
     </v-main>
 
@@ -27,12 +27,16 @@ export default {
     return {
       title: "Mi pagina",
       drawer: false,
+      loggedIn: false,
     };
   },
   methods: {
     toggleDrawer() {
       this.drawer = !this.drawer;
       this.title = this.drawer ? "Mi otra pagina" : "Cesar's page";
+    },
+    userLoggedIn(loggedIn) {
+      this.loggedIn = loggedIn;
     },
   },
 };

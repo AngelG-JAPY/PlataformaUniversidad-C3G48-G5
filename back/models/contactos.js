@@ -6,4 +6,4 @@ const contactoSchema = mongoose.Schema({
   description: String,
 });
 
-module.exports = mongoose.model("Home", contactoSchema);
+module.exports = mongoose.model("contato", contactoSchema, "contacto");
