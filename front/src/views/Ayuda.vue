@@ -16,11 +16,11 @@
            </v-row>
            <v-row>
              <v-col>
-               <!--<div class="text-center d-flex pb-4">
+               <div class="text-center d-flex pb-4">
                  <v-btn @click="all"> TODAS </v-btn>
                  <div>{{ panel }}</div>
                  <v-btn @click="none"> UNA </v-btn>
-               </div>-->
+               </div>
 
                <v-expansion-panels v-model="panel" multiple>
                  <v-expansion-panel>
@@ -85,7 +85,7 @@
                    counter
                    label="texto"
                    :rules="rules"
-                   :value="value"
+                   v-model="mensaje"
                  ></v-textarea>
                </v-container>
              </v-col>
@@ -95,6 +95,9 @@
                <v-btn explore @click="Preguntar()" color="primary"
                  >Preguntar</v-btn
                >
+               <v-alert sucess> {{datos}}
+
+               </v-alert>
              </v-col>
            </v-row>
          </v-card>
@@ -105,14 +108,23 @@
 
 
  <script>
+import { enviarCorreo} from "../Services/mail.controller";
  export default {
    data() {
      return {
        panel: [],
        items: 5,
+       mensaje:"",
+       datos:""
      };
    },
+
    methods: {
+     Preguntar(){
+       enviarCorreo(this.mensaje)
+       .then(() => this.datos = "mensaje enviado")
+       .catch((err) => (this.datos = "Error:" + err.response.data.mensaje));
+     },
      // Create an array the length of our items
      // with all values as true
      all() {
@@ -125,6 +137,7 @@
    },
  };
  </script>
+
 
 
  <style scoped>
