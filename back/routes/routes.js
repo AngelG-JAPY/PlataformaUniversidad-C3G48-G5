@@ -2,6 +2,7 @@ const express = require("express");
 const ProductsController = require("../controllers/productsController");
 const NoticiasController = require("../controllers/noticiasController");
 const UsersController = require("../controllers/usersController");
+const mailController = require("../controllers/mailController");
 
 const router = express.Router();
 
@@ -19,5 +20,7 @@ router.post("/noticias", NoticiasController.insert);
 //ruta user
 router.post("/users", UsersController.insert);
 router.post("/authenticate", UsersController.validateUser);
+// ruta mail
+router.post("/send-mail", mailController.sendEmail);
 
 module.exports = router;
