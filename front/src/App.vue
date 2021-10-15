@@ -1,10 +1,10 @@
 <template>
   <v-app>
-    <Menu :isLogged="loggedIn" />
+    <Menu :menuProp="dataAppLoggedIn" @logged="userLoggedIn"/>
 
     <v-main>
       <v-container fluid>
-        <router-view v-on:logged="userLoggedIn"></router-view>
+        <router-view  @logged="userLoggedIn"></router-view>
       </v-container>
     </v-main>
 
@@ -27,7 +27,7 @@ export default {
     return {
       title: "Mi pagina",
       drawer: false,
-      loggedIn: false,
+      dataAppLoggedIn: false,
     };
   },
   methods: {
@@ -36,7 +36,7 @@ export default {
       this.title = this.drawer ? "Mi otra pagina" : "Cesar's page";
     },
     userLoggedIn(loggedIn) {
-      this.loggedIn = loggedIn;
+      this.dataAppLoggedIn = loggedIn;
     },
   },
 };
