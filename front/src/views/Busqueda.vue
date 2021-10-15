@@ -38,29 +38,30 @@
           <v-btn color="error" class="mr-4"> Borrar Filtros </v-btn>
         </v-form> -->
 
-    <v-row class="mt-10" justify="left">
-      <v-col cols="12" sm="12" lg="3">
-        <div class="busquedas">
-          <v-row>
+    <v-row class="mt-10" justify="center">
+        <div class="busquedas md-5" >
+          <v-row  justify="center" >
             <v-col
               v-for="busqueda in busquedas"
               :key="busqueda.code"
+              class="ml-2 md-2"
               md="4"
+              lg="3"
               sm="6"
+              
             >
-              <v-card class="mx-auto" max-width="300">
+              <v-card class="mx-auto" max-width="500" min-width="200"> 
                 <v-img
                   class="black--text align-end"
                   height="200px"
                   :src="
-                    busqueda.imageUrl == undefined
-                      ? 'https://www.webempresa.com/foro/wp-content/uploads/wpforo/attachments/3200/318277=80538-Sin_imagen_disponible.jpg'
-                      : busqueda.imageURL
-                  "
+                    busqueda.imageUrl != undefined
+                      ? busqueda.imageUrl
+                      : 'https://www.webempresa.com/foro/wp-content/uploads/wpforo/attachments/3200/318277=80538-Sin_imagen_disponible.jpg'
+                    "
                 >
-                  <v-card-title class="black--text">{{
-                    busqueda.nombre
-                  }}</v-card-title>
+                  <v-card-title class="black--text">{{busqueda.nombre}}
+                  </v-card-title>
                 </v-img>
 
                 <v-card-subtitle class="pb-0">
@@ -80,7 +81,7 @@
             </v-col>
           </v-row>
         </div>
-      </v-col>
+      
     </v-row>
   </v-main>
 </template>
