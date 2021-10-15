@@ -1,18 +1,10 @@
 <template>
   <v-app>
-<<<<<<< HEAD
     <Menu :menuProp="dataAppLoggedIn" @logged="userLoggedIn"/>
 
     <v-main>
       <v-container fluid>
         <router-view  @logged="userLoggedIn"></router-view>
-=======
-    <Menu :isLogged="loggedIn" />
-
-    <v-main>
-      <v-container fluid>
-        <router-view v-on:logged="userLoggedIn"></router-view>
->>>>>>> 2962c0725c176fe591258f1f965746fb4c5fa4d6
       </v-container>
     </v-main>
 
@@ -35,11 +27,7 @@ export default {
     return {
       title: "Mi pagina",
       drawer: false,
-<<<<<<< HEAD
       dataAppLoggedIn: false,
-=======
-      loggedIn: false,
->>>>>>> 2962c0725c176fe591258f1f965746fb4c5fa4d6
     };
   },
   methods: {
@@ -48,11 +36,7 @@ export default {
       this.title = this.drawer ? "Mi otra pagina" : "Cesar's page";
     },
     userLoggedIn(loggedIn) {
-<<<<<<< HEAD
       this.dataAppLoggedIn = loggedIn;
-=======
-      this.loggedIn = loggedIn;
->>>>>>> 2962c0725c176fe591258f1f965746fb4c5fa4d6
     },
   },
 };

@@ -11,7 +11,6 @@
         </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only">
-<<<<<<< HEAD
         <button text class="btn btn-lindu" ><router-link to="/" class="text">Inicio</router-link></button>
 
         <button text v-if="!menuProp" class="btn btn-lindu">
@@ -37,29 +36,6 @@
         </button>
         <button text v-if="menuProp" class="btn btn-lindu" @click="logOut()"
           ><span class="text">Cerrar Sesión</span></button>
-=======
-        <v-btn text><router-link to="/">Inicio</router-link></v-btn>
-        <v-btn text v-if="!isLogged"
-          ><router-link to="/iniciosesion"
-            >Inicio sesion/Registro</router-link
-          ></v-btn
-        >
-        <v-btn text v-if="isLogged"
-          ><router-link to="/ayuda">Ayuda</router-link></v-btn
-        >
-        <button id="btn3" v-if="!isLogged" type="button">
-          <router-link class="btn btn-borde" to="/ayuda">Ayuda</router-link>
-        </button>
-        <v-btn text v-if="isLogged"
-          ><router-link to="/busqueda">Busqueda</router-link></v-btn
-        >
-        <v-btn text v-if="isLogged"
-          ><router-link to="/noticias">Noticias</router-link></v-btn
-        >
-        <v-btn text v-if="isLogged"
-          ><router-link to="/perfil">Perfil</router-link></v-btn
-        >
->>>>>>> 2962c0725c176fe591258f1f965746fb4c5fa4d6
       </v-toolbar-items>
       <div class="hidden-sm-and-up">
         <v-row justify="space-around">
@@ -136,14 +112,10 @@ export default {
   // },
   name: "Menu",
   props: {
-<<<<<<< HEAD
     menuProp:{
       type: Boolean,
       default: false
     }
-=======
-    isLogged: false,
->>>>>>> 2962c0725c176fe591258f1f965746fb4c5fa4d6
   },
   data: () => {
     return {
@@ -159,13 +131,9 @@ export default {
     logOut() {
       sessionStorage.removeItem("correo");
       sessionStorage.removeItem("role");
-<<<<<<< HEAD
       this.$emit("logged", false);
       this.$router.push("/");
       // window.location.reload();
-=======
-      window.location.reload();
->>>>>>> 2962c0725c176fe591258f1f965746fb4c5fa4d6
     },
   },
   computed: {
@@ -184,7 +152,8 @@ export default {
   display: block;
   position: flex;
   width: 25%;
-  height: 25%;
+  height: 23%;
+  
 }
 
 
