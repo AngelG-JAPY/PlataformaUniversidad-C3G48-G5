@@ -12,16 +12,6 @@
         ></v-carousel-item>
       </v-carousel>
     </v-card>
-<<<<<<< HEAD
-    <v-row class="mt-10" justify="left">
-      <v-col cols="12" sm="12" lg="3">
-        <v-form ref="form" v-model="valid" lazy-validation>
-          <v-select v-model="select" :items="pais" label="Pais"></v-select>
-          <v-select v-model="select" :items="departamento" label="Departamento" ></v-select>
-          <v-select v-model="select" :items="ciudad" label="Ciudad"></v-select>
-          <v-select v-model="select" :items="carrera" label="Carrera"></v-select>
-
-=======
 
     <!-- Acá inicia el formulario de busqueda -->
 
@@ -42,7 +32,6 @@
             :items="Carrera"
             label="Carrera"
           ></v-select>
->>>>>>> d97fbe5041a46f29f17294fa6b05b6e080494c64
 
           <v-btn color="success" class="mr-4"> Buscar </v-btn>
 
@@ -107,22 +96,6 @@ export default {
 
   data() {
     return {
-<<<<<<< HEAD
-      pais: ["Colombia"],
-      departamento: [
-        "Valle Del cauca",
-        "Norte De Santander",
-        "Cundinamarca",
-        "Antioquia",
-      ],
-      ciudad: ["Cúcuta", "Bogota", "Medellin", "Cali"],
-      carrera: [
-        "Ing En sistemas",
-        "Administracion De Empresas",
-        "Diseño Grafico",
-        "Medicina",
-      ],
-=======
       busquedas: [],
       // pais: ["Colombia"],
 
@@ -142,7 +115,6 @@ export default {
       // items:[
       // ],
 
->>>>>>> d97fbe5041a46f29f17294fa6b05b6e080494c64
       imagenes: [
         {
           src: require("../assets/sl1.jpg"),
