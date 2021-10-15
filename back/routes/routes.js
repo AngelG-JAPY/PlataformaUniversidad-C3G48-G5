@@ -6,6 +6,21 @@ const BusquedasController = require("../controllers/busquedasController");
 const ContactoController = require("../controllers/contactoController");
 const mailController = require("../controllers/mailController");
 
+
+// Carga de archivos
+const multer = require("multer");
+const storageConfig = multer.diskStorage({
+    destination: (req, res, cb) => {
+        cb(null, "./uploads");
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.fieldname + "_" + Date.now() + "_" + file.originalname);
+    }
+});
+
+const upload = multer({ storage: storageConfig });
+ 
+
 const router = express.Router();
 
 // rutas de producto
@@ -27,9 +42,5 @@ router.post("/send-mail", mailController.sendEmail);
 
 //rutas busqueda
 router.get("/busquedas", BusquedasController.getAll);
-router.post("/busquedas", BusquedasController.insert);
-
-//ruta contacto
-router.post("/contacto", ContactoController.insert);
-router.get("/mostrarsms", ContactoController.getAll);
+router.post("/busquedas", upload.single("image"), BusquedasController.insert);
 module.exports = router;
