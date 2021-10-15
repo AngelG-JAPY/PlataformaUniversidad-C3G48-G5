@@ -1,6 +1,6 @@
 <template>
   <body class="imagen">
-    <h1>Pagina Inicial</h1>
+    <h1>Acerca de nosotros</h1>
     <v-container>
       <v-row justify="center" id="contenedor">
         <v-col cols="12" xs="12" md="6">
