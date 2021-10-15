@@ -1,14 +1,14 @@
 <template>
   <v-app>
-    <Menu />
+    <Menu :menuProp="dataAppLoggedIn" @logged="userLoggedIn"/>
 
     <v-main>
       <v-container fluid>
-        <router-view></router-view>
+        <router-view  @logged="userLoggedIn"></router-view>
       </v-container>
     </v-main>
 
-    <v-footer app>
+    <v-footer app style="background: #232424;">
       <Footer></Footer>
     </v-footer>
   </v-app>
@@ -27,6 +27,7 @@ export default {
     return {
       title: "Mi pagina",
       drawer: false,
+      dataAppLoggedIn: false,
     };
   },
   methods: {
@@ -34,10 +35,16 @@ export default {
       this.drawer = !this.drawer;
       this.title = this.drawer ? "Mi otra pagina" : "Cesar's page";
     },
+    userLoggedIn(loggedIn) {
+      this.dataAppLoggedIn = loggedIn;
+    },
   },
 };
 </script>
 <style>
+.v-main__wrap{
+  background: #fff;
+}
 body {
   margin: 0px;
 }
@@ -49,7 +56,7 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar {
   width: 12px;
-  background-color: #ffffff;
+  background-color: #232424;
 }
 
 body::-webkit-scrollbar-thumb {

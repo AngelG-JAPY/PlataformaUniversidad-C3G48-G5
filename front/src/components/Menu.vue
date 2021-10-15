@@ -1,30 +1,39 @@
 <template>
-  <v-card class="contenedor" color="grey">
-    <v-toolbar flat class="mainHeader">
-      <v-toolbar-title>Universidades</v-toolbar-title>
+  <v-card class="contenedor" color="grey" >
+    <v-toolbar flat class="mainHeader" style="background: #232424;">
+      <v-toolbar-title>
+        
+        <img src="../assets/logo1.png" class="logo"  alt="">
+        
+        </v-toolbar-title>
+
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only">
-        <v-btn text><router-link to="/">Inicio</router-link></v-btn>
-        <v-btn text v-if="!isLoggedIn"
-          ><router-link to="/iniciosesion"
-            >Inicio sesion/Registro</router-link
-          ></v-btn
-        >
-        <v-btn text v-if="isLoggedIn"
-          ><router-link to="/ayuda">Ayuda</router-link></v-btn
-        >
-        <button id="btn3" v-if="!isLoggedIn" type="button">
-          <router-link class="btn btn-borde" to="/ayuda">Ayuda</router-link>
+        <button text class="btn btn-lindu" ><router-link to="/" class="text">Inicio</router-link></button>
+
+        <button text v-if="!menuProp" class="btn btn-lindu">
+          <router-link to="/iniciosesion" class="text">Inicio sesión/Registro</router-link>
         </button>
-        <v-btn text v-if="isLoggedIn"
-          ><router-link to="/busqueda">Busqueda</router-link></v-btn
-        >
-        <v-btn text v-if="isLoggedIn"
-          ><router-link to="/noticias">Noticias</router-link></v-btn
-        >
-        <v-btn text v-if="isLoggedIn"
-          ><router-link to="/perfil">Perfil</router-link></v-btn
-        >
+        
+        <!-- <v-btn text v-if="menuProp"
+          ><router-link to="/ayuda">Ayuda</router-link></v-btn
+        > -->
+        <button id="btn3" v-if="menuProp" type="button" class="btn btn-lindu" >
+          <router-link  to="/ayuda" class="text">Ayuda</router-link>
+        </button>
+        
+        <button  v-if="menuProp" type="button" class="btn btn-lindu" >
+          <router-link  to="/busqueda" class="text">Busqueda</router-link>
+        </button>
+
+        <button  v-if="menuProp" type="button" class="btn btn-lindu" >
+          <router-link  to="/noticias" class="text">Noticias</router-link>
+        </button>
+        <button  v-if="menuProp" type="button" class="btn btn-lindu" >
+          <router-link  to="/perfil" class="text">Perfil</router-link>
+        </button>
+        <button text v-if="menuProp" class="btn btn-lindu" @click="logOut()"
+          ><span class="text">Cerrar Sesión</span></button>
       </v-toolbar-items>
       <div class="hidden-sm-and-up">
         <v-row justify="space-around">
@@ -51,35 +60,35 @@
                 <v-list-item-title><router-link to="/about">Acerca de</router-link></v-list-item-title>
               </v-list-item> -->
               <v-list-item>
-                <v-list-item-title v-if="!isLoggedIn"
+                <v-list-item-title v-if="!menuProp"
                   ><router-link to="/iniciosesion"
                     >Inicio sesion/Registro</router-link
                   ></v-list-item-title
                 >
               </v-list-item>
               <v-list-item>
-                <v-list-item-title v-if="isLoggedIn"
+                <v-list-item-title v-if="menuProp"
                   ><router-link to="/ayuda"
                     >Ayuda</router-link
                   ></v-list-item-title
                 >
               </v-list-item>
               <v-list-item>
-                <v-list-item-title v-if="isLoggedIn"
+                <v-list-item-title v-if="menuProp"
                   ><router-link to="/busqueda"
                     >Busqueda</router-link
                   ></v-list-item-title
                 >
               </v-list-item>
               <v-list-item>
-                <v-list-item-title v-if="isLoggedIn"
+                <v-list-item-title v-if="menuProp"
                   ><router-link to="/noticias"
                     >Noticias</router-link
                   ></v-list-item-title
                 >
               </v-list-item>
               <v-list-item>
-                <v-list-item-title v-if="isLoggedIn"
+                <v-list-item-title v-if="menuProp"
                   ><router-link to="/perfil"
                     >Perfil</router-link
                   ></v-list-item-title
@@ -100,6 +109,12 @@ export default {
   //   login,
   // },
   name: "Menu",
+  props: {
+    menuProp:{
+      type: Boolean,
+      default: false
+    }
+  },
   data: () => {
     return {
       showLogin: false,
@@ -114,7 +129,9 @@ export default {
     logOut() {
       sessionStorage.removeItem("correo");
       sessionStorage.removeItem("role");
-      window.location.reload();
+      this.$emit("logged", false);
+      this.$router.push("/");
+      // window.location.reload();
     },
   },
   computed: {
@@ -126,20 +143,108 @@ export default {
 };
 </script>
 <style scoped>
-.btn-borde {
-  padding: 0.375rem 0.75rem;
-  border: 1px solid #007bff;
-  border-radius: 0.25rem;
-  color: #007bff;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+
+
+
+.logo{
+  display: block;
+  position: flex;
+  width: 25%;
+  height: 23%;
+  
 }
 
-.btn-borde:hover,
-.btn-borde:active,
-.btn-borde:focus {
-  color: #fff;
-  background-color: #007bff;
+
+
+.btn-lindu {
+  margin-top: 5px;
+  margin-bottom: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+  
+  position: relative;
 }
+
+.text{
+  font-size: 18px;
+  text-decoration: none;
+  color: #ffffff;
+  text-shadow: 0 0 2px hsl(0 0% 100% / 0.3), 0 0 2px currentColor;
+
+}
+
+/* .btn-lindu::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: #2196F3;
+  
+
+  top: 12px;
+  left: 0;
+  width: auto;
+  height:auto;
+
+  transform: perspective(2px) rotateX(40deg) scale(1, 0.35);
+  filter: blur(5px);
+  opacity: 0.7;
+} */
+
+/* .btn-lindu::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 5px 2px #2196F3;
+  opacity: 0;
+  background-color: #2196F3;
+  z-index: -1;
+  transition: opacity 100ms linear;
+} */
+
+.btn-lindu:hover {
+border-bottom:#2196F3 5px solid;
+  
+  border-radius: 5px;
+  box-shadow:  0px 15px 10px -15px #2196F3 ;
+}
+.btn-lindu:focus {
+  color: #fff;
+  text-shadow: none;
+  border-bottom:#2196F3 5px solid;
+  
+  border-radius: 5px;
+  box-shadow:  0px 15px 10px -15px #2196F3 ;
+  
+}
+.text:focus{
+    color: #2196f3;
+    text-shadow: 0 0 2px hsl(0 0% 100% / 0.3), 0 0 2px currentColor;
+    
+}
+.text:hover {
+  color: #2196f3;
+  text-shadow: none;
+  text-shadow: 0 0 2px hsl(0 0% 100% / 0.3), 0 0 2px currentColor;
+}
+
+.btn-lindu:hover::before,
+.btn-lindu:focus::before {
+  opacity: 1;
+}
+.btn-lindu:hover::after,
+.btn-lindu:focus::after {
+  opacity: 1;
+}
+
 a:-webkit-any-link {
   text-decoration: none;
 }

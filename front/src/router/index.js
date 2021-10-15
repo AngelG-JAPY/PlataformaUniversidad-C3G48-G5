@@ -18,7 +18,7 @@ const routes = [
   },
   {
     path: "/busqueda",
-    name: "Busquedad",
+    name: "Busqueda",
     component: () => import("../views/Busqueda.vue"),
   },
   {
