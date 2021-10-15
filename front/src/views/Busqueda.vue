@@ -116,16 +116,16 @@ export default {
 
       imagenes: [
         {
+          src: require("../assets/sl1.jpg"),
+        },
+        {
+          src: require("../assets/sl2.jpg"),
+        },
+        {
+          src: require("../assets/sl3.jpg"),
+        },
+        {
           src: require("../assets/slbt3.jpg"),
-        },
-        {
-          src: "https://cdn.vuetifyjs.com/images/carousel/sky.jpg",
-        },
-        {
-          src: "https://cdn.vuetifyjs.com/images/carousel/bird.jpg",
-        },
-        {
-          src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg",
         },
       ],
     };
