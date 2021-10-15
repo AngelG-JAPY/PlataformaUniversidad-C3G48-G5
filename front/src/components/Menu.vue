@@ -1,14 +1,12 @@
 <template>
-  <v-card class="contenedor" color="grey">
-    <v-toolbar flat class="mainHeader" style="background: #fff;">
+  <v-card class="contenedor" color="grey" >
+    <v-toolbar flat class="mainHeader" style="background: #232424;">
       <v-toolbar-title>
         
-        <img src="../assets/logo.png" class="logo"  alt="">
-        
-        
-        
+        <img src="../assets/logo1.png" class="logo"  alt="">
         
         </v-toolbar-title>
+
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only">
         <button text class="btn btn-lindu" ><router-link to="/" class="text">Inicio</router-link></button>
@@ -169,22 +167,19 @@ export default {
   width: auto;
   height: auto;
   cursor: pointer;
-  border-bottom:#2196F3 5px solid;
   
-  border-radius: 5px;
-  box-shadow:  0px 15px 10px -15px #2196F3 ;
   position: relative;
 }
 
 .text{
   font-size: 18px;
   text-decoration: none;
-  color: #2196F3;
+  color: #ffffff;
   text-shadow: 0 0 2px hsl(0 0% 100% / 0.3), 0 0 2px currentColor;
 
 }
 
-.btn-lindu::before {
+/* .btn-lindu::before {
   pointer-events: none;
   content: "";
   position: absolute;
@@ -199,9 +194,9 @@ export default {
   transform: perspective(2px) rotateX(40deg) scale(1, 0.35);
   filter: blur(5px);
   opacity: 0.7;
-}
+} */
 
-.btn-lindu::after {
+/* .btn-lindu::after {
   content: "";
   position: absolute;
   top: 0;
@@ -213,21 +208,32 @@ export default {
   background-color: #2196F3;
   z-index: -1;
   transition: opacity 100ms linear;
-}
+} */
 
-.btn-lindu:hover,
+.btn-lindu:hover {
+border-bottom:#2196F3 5px solid;
+  
+  border-radius: 5px;
+  box-shadow:  0px 15px 10px -15px #2196F3 ;
+}
 .btn-lindu:focus {
   color: #fff;
   text-shadow: none;
+  border-bottom:#2196F3 5px solid;
+  
+  border-radius: 5px;
+  box-shadow:  0px 15px 10px -15px #2196F3 ;
   
 }
 .text:focus{
-    color: #f32121;
+    color: #2196f3;
+    text-shadow: 0 0 2px hsl(0 0% 100% / 0.3), 0 0 2px currentColor;
     
 }
 .text:hover {
-  color: #fff;
+  color: #2196f3;
   text-shadow: none;
+  text-shadow: 0 0 2px hsl(0 0% 100% / 0.3), 0 0 2px currentColor;
 }
 
 .btn-lindu:hover::before,

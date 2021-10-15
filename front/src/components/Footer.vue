@@ -1,5 +1,5 @@
 <template>
-    <p >Este producto es desarrollado por <a href="https://github.com/AngelG-JAPY/PlataformaUniversidad-C3G48-G5">Grupo #5, grupo 48, UTP-Misiontic</a></p>
+    <p style="color: #fff;" >Este producto es desarrollado por <a href="https://github.com/AngelG-JAPY/PlataformaUniversidad-C3G48-G5">Grupo #5, grupo 48, UTP-Misiontic</a></p>
 </template>
 
 <script>
