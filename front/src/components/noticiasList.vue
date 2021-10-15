@@ -1,16 +1,16 @@
 <template>
-  <div class="products">
+  <div class="noticias">
     <v-container>
-      <h1>Product list</h1>
+      <h1>NOTICIAS</h1>
 
       <v-row>
         <v-col v-for="noticia in noticias" :key="noticia.code" md="4" sm="6">
           <v-card elevation="2" class="mx-auto">
             <v-card-title>{{ noticia.name }}</v-card-title>
             <v-card-subtitle
-              ><b>Price:</b> $ {{ noticia.decripcion }}
+              > {{ noticia.decripcion }}
             </v-card-subtitle>
-            <v-card-subtitle><b>Categories:</b></v-card-subtitle>
+            <v-card-subtitle><b>Etiquetas:</b></v-card-subtitle>
             <v-chip-group column>
               <v-chip v-for="Etiqueta in noticia.Etiqueta" :key="Etiqueta">
                 {{ Etiqueta }}
