@@ -1,11 +1,12 @@
 <template>
   <body class="imagen">
+    <h1>Pagina Inicial</h1>
     <v-container>
       <v-row justify="center" id="contenedor">
         <v-col cols="12" xs="12" md="6">
           <div class="mt-15">
             <p>
-              promover la busqueda de univerisdades para aquellos jovenes y
+              Promover la busqueda de univerisdades para aquellos jovenes y
               adultos
               <br />
               que desean encontrar la mejor opcion para realizar su educacion
