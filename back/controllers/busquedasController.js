@@ -1,4 +1,5 @@
 const busquedaModel = require("../models/busquedas");
+const products = require("../models/products");
 
 module.exports = class busquedasController {
   static async getAll(req, res) {
@@ -26,9 +27,13 @@ module.exports = class busquedasController {
 
   static async insert(req, res) {
     try {
-      const busqueda = req.body;
-      const newBusqueda = await busquedaModel.create(busqueda);
-      res.status(201).json(newBusqueda);
+        const busqueda = req.body;
+        if (req.file != undefined) {
+          const imageName = req.file.filename;
+          busqueda.imageUrl = "/" + imageName;
+        }
+        const newBusqueda = await busquedaModel.create(busqueda);
+        res.status(201).json(newBusqueda);
     } catch (err) {
       res.status(400).json({ message: err.message });
     }

@@ -18,19 +18,19 @@
       <v-col cols="12" sm="12" lg="3">
         <v-form ref="form" v-model="valid" lazy-validation>
 
-          <v-select v-model="select" :pais="pais" label="Pais"></v-select>
+          <v-select v-model="select" :items="pais" label="Pais"></v-select>
 
           <v-select
             v-model="select"
-            :departamento="departamento"
+            :items="departamento"
             label="Departamento"
           ></v-select>
 
-          <v-select v-model="select" :ciudad="Ciudad" label="Ciudad"></v-select>
+          <v-select v-model="select" :items="Ciudad" label="Ciudad"></v-select>
           
           <v-select
             v-model="select"
-            :carrera="Carrera"
+            :items="Carrera"
             label="Carrera"
           ></v-select>
 
@@ -58,21 +58,23 @@ export default {
   },
   data() {
     return {
-      pais: ["Colombia"],
+      // pais: ["Colombia"],
 
-      departamento: [
-        "Valle Del cauca",
-        "Norte De Santander",
-        "Cundinamarca",
-        "Antioquia",
-      ],
-      ciudad: ["Cúcuta", "Bogota", "Medellin", "Cali"],
-      carrera: [
-        "Ing En sistemas",
-        "Administracion De Empresas",
-        "Diseño Grafico",
-        "Medicina",
-      ],
+      // departamento: [
+      //   "Valle Del cauca",
+      //   "Norte De Santander",
+      //   "Cundinamarca",
+      //   "Antioquia",
+      // ],
+      // ciudad: ["Cúcuta", "Bogota", "Medellin", "Cali"],
+      // carrera: [
+      //   "Ing En sistemas",
+      //   "Administracion De Empresas",
+      //   "Diseño Grafico",
+      //   "Medicina",
+      // ],
+      // items:[
+      // ],
 
       imagenes: [
         {
