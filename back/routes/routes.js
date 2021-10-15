@@ -2,6 +2,7 @@ const express = require("express");
 const ProductsController = require("../controllers/productsController");
 const NoticiasController = require("../controllers/noticiasController");
 const UsersController = require("../controllers/usersController");
+const UniversidadesController = require("../controllers/universidadesController");
 const BusquedasController = require("../controllers/busquedasController");
 const ContactoController = require("../controllers/contactoController");
 const mailController = require("../controllers/mailController");
@@ -37,6 +38,10 @@ router.post("/users", UsersController.insert);
 router.post("/authenticate", UsersController.validateUser);
 // ruta mail
 router.post("/send-mail", mailController.sendEmail);
+
+//ruta universidad
+router.get("/universidades", UniversidadesController.getAll);
+router.post("/universidades", UniversidadesController.insert);
 
 //ruta contacto
 router.post("/contacto", ContactoController.insert);

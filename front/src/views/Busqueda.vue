@@ -128,7 +128,7 @@ export default {
         {
           src: require("../assets/slbt3.jpg"),
         },
-      ],
+      ]
     };
   },
   mounted() {
