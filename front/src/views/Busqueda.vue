@@ -60,9 +60,9 @@
                       : 'https://www.webempresa.com/foro/wp-content/uploads/wpforo/attachments/3200/318277=80538-Sin_imagen_disponible.jpg'
                     "
                 >
-                  <v-card-title class="black--text">{{busqueda.nombre}}
-                  </v-card-title>
+                  
                 </v-img>
+                <v-card-title class="black--text">{{ busqueda.nombre }}</v-card-title>
 
                 <v-card-subtitle class="pb-0">
                   {{ busqueda.pais }}</v-card-subtitle
