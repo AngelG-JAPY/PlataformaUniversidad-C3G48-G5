@@ -13,10 +13,8 @@ app.use(express.urlencoded({ extended: true }));
 //agrgar las rutas a escuchar
 app.use("/api", require("./routes/routes"));
 
-
 // Carga de archivos
 app.use(express.static("uploads"));
-
 
 // configurar la conexion base de datos
 const mongoose = require("mongoose");
@@ -24,6 +22,13 @@ mongoose
   .connect(process.env.DB_URI)
   .then(() => console.log("conectado a la base de datos"))
   .catch((err) => console.error(err));
+
+if (process.env.NODE_ENV == "production") {
+  app.use(express.static(__dirname + "/site/"));
+  app.get("*", (req, res) => {
+    res.sendFile(__dirname + "/site/index.html");
+  });
+}
 
 // Iniciar el servidor
 const port = process.env.PORT;
