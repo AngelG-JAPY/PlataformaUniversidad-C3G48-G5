@@ -84,12 +84,11 @@
       </v-col>
     </v-row>
   </v-contaier>
-</template> 
- 
- 
+</template>
+
 <script>
 export default {};
-</script> 
+</script>
 <style scoped>
 .fondo {
   width: 100%;
@@ -97,10 +96,10 @@ export default {};
   position: absolute;
   top: 0;
   left: 0;
-  background: url("https://media.istockphoto.com/photos/blue-background-picture-id996078816?k=20&m=996078816&s=612x612&w=0&h=RnDOSWqpE3SghSazzNztGF-w9pDg0PiQKuRRbLJcyEY=")
-    no-repeat center center;
+  /* background: url("https://media.istockphoto.com/photos/blue-background-picture-id996078816?k=20&m=996078816&s=612x612&w=0&h=RnDOSWqpE3SghSazzNztGF-w9pDg0PiQKuRRbLJcyEY=")
+    no-repeat center center; */
   background-size: cover;
-  background-color: grey;
+  background: linear-gradient(#a8daf0, #c9c9c9) !important;
   background-attachment: scroll;
 }
 </style>

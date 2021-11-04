@@ -23,7 +23,7 @@ mongoose
   .then(() => console.log("conectado a la base de datos"))
   .catch((err) => console.error(err));
 
-if (process.env.NODE_ENV == "production") {
+if (process.env.NODE_ENV === "production") {
   app.use(express.static(__dirname + "/site/"));
   app.get("*", (req, res) => {
     res.sendFile(__dirname + "/site/index.html");
