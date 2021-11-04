@@ -1,15 +1,16 @@
 <template>
   <body class="imagen">
-    <h1>Acerca de nosotros</h1>
     <v-container>
       <v-row justify="center" id="contenedor">
         <v-col cols="12" xs="12" md="6">
           <div class="mt-15">
+            <h1>Acerca de nosotros</h1>
+
             <p>
-              Promover la busqueda de univerisdades para aquellos jovenes y
+              Promover la búsqueda de universidades para aquellos jóvenes y
               adultos
               <br />
-              que desean encontrar la mejor opcion para realizar su educacion
+              que desean encontrar la mejor opción para realizar su educación
               superior,
               <br />
               encontrando en nuestro sitio un gran portafolio de posibles
@@ -38,6 +39,10 @@
       <br />
       <v-row>
         <v-col cols="12" md="12">
+          <h2>
+            Contactanos
+          </h2>
+          <br />
           <div>
             <v-text-field
               label="Nombre"
@@ -61,9 +66,6 @@
       <v-row>
         <v-col cols="12" md="12">
           <div>
-            <h4>
-              Contactanos
-            </h4>
             <p id="iconos">
               Colombia Bogotá (60 1) 343 00
               <br />
